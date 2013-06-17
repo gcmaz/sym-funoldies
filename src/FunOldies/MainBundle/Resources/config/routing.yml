@@ -1,0 +1,94 @@
+fo_homepage:
+    pattern:  /
+    defaults: { _controller: FunOldiesMainBundle:Page:index }
+    methods: [GET|POST]
+    
+fo_contact:
+    path: /contact/prescott/radio/99-1
+    defaults: { _controller: FunOldiesMainBundle:Page:contact }
+    methods: [GET|POST]
+
+fo_contact2:
+    path: /contact
+    defaults: { _controller: FunOldiesMainBundle:Page:contact }
+    methods: [GET|POST]
+    
+fo_onair:
+    path: /on-air/radio/talent/programming
+    defaults: { _controller: FunOldiesMainBundle:Page:onair }
+    methods: GET
+
+fo_photos:
+    path: /photos/prescott
+    defaults: { _controller: FunOldiesMainBundle:Page:photos }
+    methods: [GET|POST]
+    
+fo_songrequest:
+    path: /radio/songs/requests
+    defaults: { _controller: FunOldiesMainBundle:Page:songrequest }
+    methods: [GET|POST]
+    
+fo_concerts:
+    path: /concerts/prescott/arizona
+    defaults: { _controller: FunOldiesMainBundle:Page:concerts }
+    methods: GET
+  
+fo_concerts2:
+    path: /concerts
+    defaults: { _controller: FunOldiesMainBundle:Page:concerts }
+    methods: GET
+
+fo_community:
+    path: /prescott/community/info
+    defaults: { _controller: FunOldiesMainBundle:Page:community }
+    methods: GET
+    
+fo_whats:
+    path: /prescott/events
+    defaults: { _controller: FunOldiesMainBundle:Page:whats }
+    methods: GET
+    
+fo_advertise:
+    path: /radio/prescott/advertise
+    defaults: { _controller: FunOldiesMainBundle:Advertise:enter }
+    methods: [GET|POST]
+
+fo_advertise_show:
+    path: /radio/prescott/advertise/{show}
+    defaults: { _controller: FunOldiesMainBundle:Advertise:show, show: 'none'  }
+    methods: [GET]
+    
+fo_news:
+    path: /prescott/news/weather
+    defaults: { _controller: FunOldiesMainBundle:Page:news }
+    methods: [GET|POST]
+
+fo_contest:
+    path: /contest/{contest}
+    defaults: { _controller: FunOldiesMainBundle:Contest:contest,  contest: 'default' }
+    methods: [GET|POST]
+  
+fo_splash:
+    path: /info/{splash}
+    defaults: { _controller: FunOldiesMainBundle:Splash:splash, splash: 'default' }
+    methods: [GET|POST]
+
+fo_pet:
+    path: /prescott/pet-of-the-week
+    defaults: { _controller: FunOldiesMainBundle:Page:Pet }
+    methods: [GET]
+    
+fo_jobs:
+    path: /jobs
+    defaults: { _controller: FunOldiesMainBundle:Page:jobs }
+    methods: GET
+    
+fo_weather:
+    path: /weather
+    defaults: { _controller: FunOldiesMainBundle:Page:weather }
+    methods: GET
+  
+fo_test:
+    path: /test
+    defaults: { _controller: FunOldiesMainBundle:Page:test }
+    methods: [GET|POST]

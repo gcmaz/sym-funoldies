@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+<meta charset="utf-8">
+{% block favicons %}{% endblock %}
+{% block styles %}{% endblock %}
+{% block ie_crap %}{% endblock %}
+{% block js_top %}{% endblock %}
+{% block analytics %}{% endblock %}
+</head>
+<body class="centered">
+<div id="fb-root"></div>
+<div id="wrapper" class="centered page">
+    <div class="bgtile centered">
+        <div class="bghdr centered">
+            <div id="leftcol">
+                {% block leftcol_logo %}{% endblock %}
+                {% block leftcol_sponsor %}{% endblock %} 
+                {% block leftcol_nav %}{% endblock %}
+                {% block leftcol_mc %}{% endblock %}
+                {% block leftcol_fb %}{% endblock %}
+                {% block leftcol_ad %}{% endblock %}
+          </div>
+            <div id="rightcol">
+                {% block exp_leaderboard %}{% endblock %}
+                {% block stream_box %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="grad-or centered">
+{% block footer %}{% endblock %}
+</div>
+{% block js_btm %}{% endblock %}
+</body>
+</html>

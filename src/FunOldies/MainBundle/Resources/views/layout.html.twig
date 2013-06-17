@@ -1,0 +1,213 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block description %}
+    <meta name="description" content="" />
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="Prescott radio, Northern Arizona Radio"  />
+{% endblock %}
+    
+{% block favicons %}
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    <link rel="icon" href="{{ asset('favicon.png') }}">
+    <!--[if IE]><link rel="shortcut icon" href="{{ asset('favicon.ico') }}"><![endif]-->
+    <!-- or, set /favicon.ico for IE10 win -->
+    <meta name="msapplication-TileColor" content="#45abac">
+    <meta name="msapplication-TileImage" content="{{ asset('favicon.ico') }}">
+{% endblock %}
+    
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700,900|Unica+One' rel='stylesheet' type='text/css'>
+{% endblock %}
+    
+{% block ie_crap %}
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block js_top %}
+    <script type="text/javascript" src="{{ asset('scripts/jquery-1.9.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('scripts/common.js') }}"></script>
+{% endblock %}
+    
+{% block analytics %}
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-38877504-1']);
+        _gaq.push(['_setDomainName', 'gcmaz.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+{% endblock %}
+      
+{# block exp_leaderboard %}
+    <div id="expleaderboard">
+        <a href="{{path('fo_concerts')}}">
+            <img src="{{ asset('images/660x150/widespread-panic.jpg') }}" width="660" height="150" alt="Widespread Panic Tickets" />
+        </a>
+    </div>
+{% endblock #}
+      
+{% block leftcol_logo %}
+        <div class="logo_box">
+            <a href="{{ path('fo_homepage') }}"><img src="{{ asset('images/logo-oldies.png') }}" width="293" height="180" alt="Fun Oldies - Prescott Radio" ></a>
+        </div>
+{% endblock %}
+      
+{% block leftcol_nav %}
+        <nav class="menu_box">
+            <ul class="menu_left dropdown">
+                <li class="grad-or headlink">
+                    <a href="{{ path('fo_homepage') }}">100.9 / 1450am</a>
+                    <ul>
+                        <li><a href="{{ path('fo_homepage') }}">HOME</a></li>
+                        <li><a href="{{ path('fo_contact') }}">CONTACT US</a></li>
+                        <li><a href="{{ path('fo_advertise') }}">ADVERTISE</a></li>
+                        <li><a href="http://www.gcmaz.com" target="_blank">GREAT CIRCLE MEDIA</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu_right dropdown">
+                <li class="grad-or headlink">
+                    <a href="{{ path('fo_onair') }}">MUSIC</a>
+                    <ul>
+                        <li><a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">LISTEN LIVE &raquo;</a></li>
+                        <li><a href="{{ path('fo_onair') }}">ON THE AIR</a></li>
+                        <li><a href="{{ path('fo_concerts') }}">CONCERTS</a></li>
+                        <li><a href="{{ path('fo_songrequest') }}">SONG REQUESTS</a></li>
+                        <li><a href="http://www.tunegenie.com/onair/ktmg/" target="_blank">PLAYLISTS</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu_left dropdown">
+                <li class="grad-or headlink">
+                    <a href="{{ path('fo_community') }}">COMMUNITY</a>
+                    <ul>
+                        <li><a href="{{ path('fo_community') }}">COMMUNITY INFO</a></li>
+                        <li><a href="{{ path('fo_whats') }}">WHAT'S HAPPENING</a></li>
+                        <li><a href="{{ path('fo_pet') }}">PET OF THE WEEK</a></li>
+                        <li><a href="{{ path('fo_weather')}}">WEATHER</a></li>
+                        <li><a href="{{ path('fo_photos') }}">PHOTOS</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu_right dropdown">
+                <li class="grad-or headlink">
+                    <a href="http://perks.gcmaz.com" target="_blank">WIN STUFF</a>
+                    <ul>
+                        <li><a href="{{ path('fo_contest', {'contest': 'magic-mashup'})}}">MAGIC MASHUP</a></li>
+                        <li><a href="http://perks.gcmaz.com" target="_blank">MAGIC PERKS</a></li>
+                        <!--li><a href="/">CONTESTS</a></li-->
+                        <li><a href="http://perks.gcmaz.com/asp3/lwcodes.aspx" target="_blank">PERKS WORD</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+{% endblock %}
+
+{% block leftcol_fb %}
+            <img src="{{ asset('images/hdr-friends.png') }}" width="300" height="40" alt="Friends" class="vertbtm">
+            <div class="fb_box">
+                <div class="fb-like-box" data-href="http://www.facebook.com/FunOldies" data-width="300" data-height="250" data-show-faces="true" data-colorscheme="light" data-stream="false" show-border="false" data-header="false" style="text-align: left;"></div>
+            </div>
+{% endblock %}
+
+{% block stream_box %}
+    <div class="stream_box">
+            <a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">
+                <img src="{{ asset('images/listen-live.png') }}" width="675" height="75" alt="Listen Live to Magic 99.1 Prescott Radio">
+            </a>
+        </div>
+{% endblock %}
+
+{% block footer %}
+    <div id="ftr-left">
+            <ul class="ftr-links-list">
+            <li style="background-image:url('{{asset("images/ftr-icon-home.png")}}');"><a href="{{ path('fo_homepage') }}">Home</a></li>
+            <li style="background-image:url('{{asset("images/ftr-icon-contact.png")}}');"><a href="{{ path('fo_contact') }}">Contact Us</a></li>
+            <li style="background-image:url('{{asset("images/ftr-icon-listen.png")}}');"><a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">Listen Live</a></li>
+            <li style="background-image:url('{{asset("images/ftr-icon-win.png")}}');"><a href="http://perks.gcmaz.com" target="_blank">Win Stuff</a></li>
+            <li style="background-image:url('{{asset("images/ftr-icon-concerts.png")}}');"><a href="{{ path('fo_onair') }}">On Air</a></li>
+        </ul>
+    </div>
+    <div id="ftr-right">
+        <div id="ftr-right-1">
+            {#
+            <!-- RECENT POSTS -->
+            <p class="wall-poet yellow">RECENT POSTS</p>
+            <br/>
+            <a class="ftr-recent-post" href="dew-flagstaff.php">Dew Downtown Flagstaff</a>
+            <br/>
+            <a class="ftr-recent-post" href="boot-drop-2013.php">New Years Eve Boot Drop</a>
+            <br />
+                    <a class="ftr-recent-post" href="/cash">Cash Call</a>
+            <br/>
+            #}
+        </div>
+        <div id="ftr-right-2">
+            <p class="cinzel" style="color:#13a0e5;font-size: 0.8em;padding-top:10px;font-weight:700;">CITIES WE SERVE</p>
+            <div style="margin-top:5px;">
+                <ul class="ftr-cities-list" style="float:left;width:90px;">
+                    <li><a href="http://www.gcmaz.com" target="_blank">Prescott</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Prescott Valley</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Sedona</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Camp Verde</a></li>
+                </ul>
+                <ul class="ftr-cities-list" style="float:right;width:140px;text-align:left;">
+                    <li><a href="http://www.gcmaz.com" target="_blank">Cottonwood</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Jerome</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Clarkdale</a></li>
+                    <li><a href="http://www.gcmaz.com" target="_blank">Williams</a></li>
+                </ul>
+                <br class="clear" />
+            </div>
+        </div>
+        <div id="ftr-right-3">
+            <a href="/"><img src="{{ asset('images/ftr-oldies-logo.png') }}" width="150" height="117" alt="Fun Oldies 100.9 / 1450am Radio" style="margin-top:-5px;"/></a>
+            <p style="color:#fff;font-size:12px;font-weight:bold;padding:0;margin:2px auto 0;">
+                Fun Oldies Radio
+            </p>
+            <p style="color:#2d1206;font-size:10px;font-weight:bold;padding:0;margin:2px auto;">
+                    &copy; GuyAnn Corporation<br/>All Rights Reserved
+            </p>
+            <p style="padding:0;margin:2px auto;font-weight:bold;font-size:10px;">
+                <a href="http://www.gcmaz.com/legal/GeneralContestRules.pdf" target="_blank"  style="color:#2d1206;text-decoration:none;">Contest Rules</a>
+                &nbsp; | &nbsp;
+                <a href="http://www.gcmaz.com/legal/eeo.pdf" target="_blank"  style="color:#2d1206;text-decoration:none;">EEO</a>
+            </p>
+        </div>
+        <div id="ftr-right-4">
+            <a href="http://www.facebook.com/FunOldies" target="_blank"><img src="{{ asset('images/ftr-facebook.png') }}" width="44" height="44" alt="Fun Oldies on Facebook" style="margin-top:30px;" /></a>
+        </div>
+    </div>
+    <br class="clear" />
+{% endblock %}
+
+{% block js_btm %}
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=479469978793919";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+{% endblock %}

@@ -1,0 +1,4 @@
+fun_oldies_main:
+    resource: "@FunOldiesMainBundle/Resources/config/routing.yml"
+    prefix:   /
+

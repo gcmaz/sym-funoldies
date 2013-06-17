@@ -1,0 +1,7 @@
+parameters:
+#    fun_oldies_main.example.class: FunOldies\MainBundle\Example
+
+services:
+#    fun_oldies_main.example:
+#        class: %fun_oldies_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
