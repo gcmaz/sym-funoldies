@@ -1,0 +1,62 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Music and Money - Win $50 Every Day! - Listen to Fun Oldies - Northern Arizona Oldies Radio
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Music and Money - Win $50 Every Day! - Listen to Fun Oldies - Northern Arizona Oldies Radio"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/music-money.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'music-and-money'}) }}"/>
+    <meta property="og:title" content="Music and Money - Win $50 Every Day! - Listen to Fun Oldies - Northern Arizona Oldies Radio"/> 
+    <meta property="og:description" content="Music and Money - Win $50 Every Day! - Listen to Fun Oldies - Northern Arizona Oldies Radio"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="radio, contest, music and money, Northern Arizona"/>
+{% endblock %}
+
+{% block content %}
+    <div class="contest">
+        <img src="{{asset('images/660x250/music-money.jpg')}}" width="660" height="250" alt="Music and Money - Radio Contest - Prescott" />
+        <p style="font-size:1.2em;font-weight:700;padding:0 20px 10px;color:#000;line-height:1.5;" class="blue">
+            Congratulations to the Winners!<br/>Thanks to everyone for playing!
+            {#
+                Bo Woods will announce and play the <span style="color:#4e4a34;">Song Of The Day</span>
+                <br/>
+                every <span style="color:#4e4a34;">Wednesday</span> and <span style="color:#4e4a34;">Friday</span> between <span style="color:#4e4a34;">6am and 10am</span>. 
+                <br/>
+                After the Song Of The Day plays, be <span style="color:#4e4a34;">caller #5</span>
+                <br/>
+                and you will win <span style="color:#4e4a34;">$50</span>!
+                <br/>
+                <span style="color:#007485;font-size:1.2em;">928-445-6883</span>
+            #}
+        </p>
+        {#<p style="color:#13a0e5;text-align:center;font-size:1.4em;font-weight:700;">928-445-6883</p>#}
+        <div class="sponsors">
+            <p style="font-size:11px;font-weight:bold;color:#666;padding:5px;margin-top:10px;">Brought To You By:</p>
+            <ul style="float:left;list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://hotyogaprescott.com/" target="_blank"><img src="{{asset('images/sponsors/bend-hot-yoga.jpg')}}" width="175" height="auto" /></a></li>
+                <li><a href="http://www.nazveincenter.com/" target="_blank"><img src="{{asset('images/sponsors/naz-vein-center.jpg')}}" width="180" height="auto" /></a></li>
+                <li><a href="http://www.bandlflooringamerica.com/" target="_blank"><img src="{{asset('images/sponsors/bl-flooring.jpg')}}" width="180" height="auto" /></a></li>
+            </ul>
+            <ul style="float:right;list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://www.anytimefitness.com/" target="_blank"><img src="{{asset('images/sponsors/anytime-fitness.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.sunvalleytireaz.com/" target="_blank"><img src="{{asset('images/sponsors/sun-valley-tire-and-auto.jpg')}}" width="159" height="auto" /></a></li>
+            </ul>
+             <ul style="list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://www.prescott.edu/" target="_blank"><img src="{{asset('images/sponsors/prescott-college.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.lambautocenters.com/" target="_blank"><img src="{{asset('images/sponsors/lamb-nissan-chevrolet.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.blimpie.com/" target="_blank"><img src="{{asset('images/sponsors/blimpie.jpg')}}" width="200" height="auto" /></a></li>
+            </ul>
+            <br class="clear" />  
+        </div>
+        <p><a href="http://www.gcmaz.com/rules/2013_50th_Birthday_Party_Promotion_Rules.pdf" target="_blank" style="text-decoration:none;color:#666;font-size:10px;">Official Rules</a></p>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'music-and-money'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+{% endblock %}

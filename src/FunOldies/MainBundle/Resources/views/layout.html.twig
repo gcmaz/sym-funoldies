@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Fun Oldies 100.9 /1450am - Prescott Radio{% endblock %}
 
 {% block description %}
-    <meta name="description" content="" />
+    <meta name="description" content="Fun Oldies 100.9 /1450am - Prescott Radio" />
 {% endblock %}
 
 {% block keywords %}
@@ -27,9 +27,7 @@
 {% block ie_crap %}
 <!--[if gte IE 9]>
   <style type="text/css">
-    .gradient {
-       filter: none;
-    }
+    .gradient { filter: none; }
   </style>
 <![endif]-->
 <!--[if lt IE 9]>
@@ -88,11 +86,9 @@
                 <li class="grad-or headlink">
                     <a href="{{ path('fo_onair') }}">MUSIC</a>
                     <ul>
-                        <li><a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">LISTEN LIVE &raquo;</a></li>
+                        <li><a href="javascript:void(window.open('http://player.tritondigital.com/14991', 'KNOTAM', 'width=800,height=600'));">LISTEN LIVE &raquo;</a></li>
                         <li><a href="{{ path('fo_onair') }}">ON THE AIR</a></li>
                         <li><a href="{{ path('fo_concerts') }}">CONCERTS</a></li>
-                        <li><a href="{{ path('fo_songrequest') }}">SONG REQUESTS</a></li>
-                        <li><a href="http://www.tunegenie.com/onair/ktmg/" target="_blank">PLAYLISTS</a></li>
                     </ul>
                 </li>
             </ul>
@@ -110,12 +106,10 @@
             </ul>
             <ul class="menu_right dropdown">
                 <li class="grad-or headlink">
-                    <a href="http://perks.gcmaz.com" target="_blank">WIN STUFF</a>
+                    <a href="#">WIN STUFF</a>
                     <ul>
-                        <li><a href="{{ path('fo_contest', {'contest': 'magic-mashup'})}}">MAGIC MASHUP</a></li>
-                        <li><a href="http://perks.gcmaz.com" target="_blank">MAGIC PERKS</a></li>
-                        <!--li><a href="/">CONTESTS</a></li-->
-                        <li><a href="http://perks.gcmaz.com/asp3/lwcodes.aspx" target="_blank">PERKS WORD</a></li>
+                        <li><a href="{{ path('fo_contest', {'contest': 'music-and-money'})}}">MUSIC AND MONEY</a></li>
+                        <li><a href="{{ path('fo_contest', {'contest':'queen-of-caffeine'})}}">QUEEN OF CAFFEINE</a></li>
                     </ul>
                 </li>
             </ul>
@@ -131,8 +125,8 @@
 
 {% block stream_box %}
     <div class="stream_box">
-            <a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">
-                <img src="{{ asset('images/listen-live.png') }}" width="675" height="75" alt="Listen Live to Magic 99.1 Prescott Radio">
+            <a href="javascript:void(window.open('http://player.tritondigital.com/14991', 'KNOTAM', 'width=800,height=600'));">
+                <img src="{{ asset('images/listen-live.png') }}" width="675" height="75" alt="Listen Live to Fun Oldies Prescott Radio">
             </a>
         </div>
 {% endblock %}
@@ -142,8 +136,8 @@
             <ul class="ftr-links-list">
             <li style="background-image:url('{{asset("images/ftr-icon-home.png")}}');"><a href="{{ path('fo_homepage') }}">Home</a></li>
             <li style="background-image:url('{{asset("images/ftr-icon-contact.png")}}');"><a href="{{ path('fo_contact') }}">Contact Us</a></li>
-            <li style="background-image:url('{{asset("images/ftr-icon-listen.png")}}');"><a href="javascript:void(window.open('http://player.tritondigital.com/8071', 'KTMGFM', 'width=800,height=600'));">Listen Live</a></li>
-            <li style="background-image:url('{{asset("images/ftr-icon-win.png")}}');"><a href="http://perks.gcmaz.com" target="_blank">Win Stuff</a></li>
+            <li style="background-image:url('{{asset("images/ftr-icon-listen.png")}}');"><a href="javascript:void(window.open('http://player.tritondigital.com/14991', 'KNOTAM', 'width=800,height=600'));">Listen Live</a></li>
+            {#<li style="background-image:url('{{asset("images/ftr-icon-win.png")}}');"><a href="http://perks.gcmaz.com" target="_blank">Win Stuff</a></li>#}
             <li style="background-image:url('{{asset("images/ftr-icon-concerts.png")}}');"><a href="{{ path('fo_onair') }}">On Air</a></li>
         </ul>
     </div>
@@ -162,7 +156,7 @@
             #}
         </div>
         <div id="ftr-right-2">
-            <p class="cinzel" style="color:#13a0e5;font-size: 0.8em;padding-top:10px;font-weight:700;">CITIES WE SERVE</p>
+            <p class="cinzel" style="color:#276570;font-size: 0.8em;padding-top:10px;font-weight:700;">CITIES WE SERVE</p>
             <div style="margin-top:5px;">
                 <ul class="ftr-cities-list" style="float:left;width:90px;">
                     <li><a href="http://www.gcmaz.com" target="_blank">Prescott</a></li>

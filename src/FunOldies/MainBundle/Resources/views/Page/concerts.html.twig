@@ -1,0 +1,41 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Concerts - Prescott - Prescott Valley - Northern Arizona - Fun Oldies
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Concerts - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />   
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/logo-oldies.png') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_concerts') }}"/>
+    <meta property="og:title" content="Concerts - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/> 
+    <meta property="og:description" content="Concerts - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="oldies, concerts, Prescott, Prescott Valley, Northern Arizona"/>
+{% endblock %}
+    
+{# block leftcol_ad %}
+    <a href="http://www.dominos.com/" target="_blank">
+        <img src="{{asset('images/300x250/dominos.jpg')}}" width="300" height="250" alt="Dominos Pizza" style="margin:5px auto;"/>
+    </a>
+{% endblock #}
+    
+{% block content %}
+    {#<div id="concerts-splash" class="centered dbl-row info-right">
+        <p class="left" style="font-size:1.5em;">Widespread Panic</p>
+        <p class="right">Sunday, July 14th</p>
+        <br class="clear"/>
+        <p><a href="http://www.protixonline.com/" target="_blank" style="color:#ccc;"><span style="text-decoration: underline;">Buy Tickets</span> (On-Sale Friday, March 22nd @ 10am MST) &raquo;</a></p>
+        <p><a href="http://pepsiamp.com/?p=920" target="_blank">Pepsi Amphitheater (Flagstaff) &raquo;</a></p>
+    </div>#}
+    <h2 class="cinzel">Concerts</h2>
+    <iframe src="http://funoldies.gcmaz.com/concerts2.php" width="660" height="600"></iframe>
+    <br/>
+    <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_concerts') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+{% endblock %}

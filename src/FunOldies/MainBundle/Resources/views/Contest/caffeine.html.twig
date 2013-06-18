@@ -1,0 +1,98 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Win Free Coffee For Your Office - Queen of Caffeine - Fun Oldies Radio
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Win Free Coffee For Your Office - Queen of Caffeine - Fun Oldies Radio"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/queen-of-caffeine.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'queen-of-caffeine'}) }}"/>
+    <meta property="og:title" content="Win Free Coffee For Your Office - Queen of Caffeine - Fun Oldies Radio"/> 
+    <meta property="og:description" content="Win Free Coffee For Your Office - Queen of Caffeine - Fun Oldies Radio"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="radio, contest, free coffee, win coffee"/>
+{% endblock %}
+    
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+        form.contactform { font-size: 14px;color:#f90; }
+        form.contactform div { clear: left; margin-bottom: 10px; }
+        form.contactform label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+        form.contactform input[type="text"],
+        form.contactform input[type="email"]
+            { width: 300px; line-height: 22px; font-size: 16px; min-height: 22px; }
+        form.contactform select { width:300px; line-height: 22px; font-size: 16px; min-height: 22px; }
+        form.contactform textarea { width: 300px; height: 150px; line-height: 22px; font-size: 16px; }
+        form.contactform input[type="submit"] { margin-left: 115px; width: 308px; line-height: 22px; font-size: 16px; min-height: 22px; }
+        form.contactform ul li { color: #c00; margin-bottom: 5px; }
+        div.notice { float:right;padding:10px;margin:10px;}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="contest" style="background-color:#251810;">
+        <img src="{{asset('images/660x250/queen-of-caffeine.jpg')}}" width="660" height="250" alt="Win Free Coffee For Your Office - Queen of Caffeine" usemap="#propane" />
+        <p style="font-size:0.8em;font-weight:700;padding:0 20px 10px;color:#ccaa95;line-height:1.5;">
+            It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and sweets from Gurley Street Coffee.
+        </p>
+        <p style="float:left;width:175px;font-size:0.7em;color:#ccaa95;padding:25px 0 0 10px;">
+            <a href="http://www.facebook.com/gurleystcoffee" target="_blank" style="display:block;">
+                <img src="{{asset('images/sponsors/gurley-st-coffee.png')}}" width="105" height="65" alt="Gurley St. Coffee" border="0" />
+            </a>
+            <br />
+            Stop by Gurley Street Coffee for all your breakfast, lunch and coffee needs! Sweet treats that put a smile on your face and a hop in your step. Gurley Street Coffee also serves amazing teas, smoothies and Italian sodas!
+            <br/><br/><span style="color:#fff;">318 W Gurley St<br/>Prescott, AZ 86001</span>
+        </p>
+        {% for flashMessage in app.session.flashbag.get('caffeinenotice') %}
+            <div class="notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <form action="{{ path('fo_contest', {'contest':'queen-of-caffeine'}) }}" method="post" {{ form_enctype(form) }} class="contactform" style="float:right;margin-right:15px;">
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.phone) }}
+             <div>
+            {{ form_label(form.workplace, 'Work Place') }}
+            {{ form_errors(form.workplace) }}
+            {{ form_widget(form.workplace) }}
+            </div>
+             <div>
+            {{ form_label(form.workplaceaddy, 'Address') }}
+            {{ form_errors(form.workplaceaddy) }}
+            {{ form_widget(form.workplaceaddy) }}
+            </div>
+            {{ form_row(form.city) }}
+            <div>
+            {{ form_label(form.workplacetime, 'Time Open') }}
+            {{ form_errors(form.workplacetime) }}
+            {{ form_widget(form.workplacetime) }}
+            </div>
+            <div>
+            {{ form_label(form.whywin, 'Why You Should Win') }}
+            {{ form_errors(form.whywin) }}
+            {{ form_widget(form.whywin) }}
+            </div>
+                
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Submit" />
+        </form>
+        <br class="clear"/>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'music-and-money'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+    <map name="propane" id="propane">
+        <area shape="rect" coords="0,189,132,250" href="http://www.barrettpropane.org" target="_blank" alt="Barrett Propane" />
+        <area shape="rect" coords="540,230,660,250" href="http://jebblann.com/wordpress/" target="_blank" alt="Jeb Blann Photography" />
+    </map>
+{% endblock %}

@@ -63,15 +63,15 @@ body{
 .bodybg7{ background-image: url('../images/1650wide/bg7.jpg'); }*/
 
 h1{
-    color:#f052da;
+    color:#c00;
     font-weight:700;
-    text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+    text-shadow:1px 1px 1px rgba(0,0,0,0.2);
 }
 h2{
     color:#13a0e5;
     font-size:2em;
     font-weight: 700;
-    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     padding: 10px;
 }
 a img { border:0; }
@@ -97,6 +97,7 @@ a img { border:0; }
                 width:675px !important;
 	float:right;
                 overflow:hidden;
+                padding-bottom: 3px;
 }
 .bgtile{
             	background-image: url('../images/bg-mid-tile.jpg');
@@ -122,7 +123,7 @@ a img { border:0; }
 	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .5);
 }
 .textshadow{
-	text-shadow:1px 1px 1px rgba(0,0,0,.5);
+	text-shadow:1px 1px 1px rgba(0,0,0,.2);
 }
 .grad-or{
     background: #ffc342; /* Old browsers */
@@ -148,7 +149,7 @@ div.notice {
     width:60%;
     margin:auto;
     color:#fff;
-    background-color:#232323;
+    background-color:#ff9900;
     border:1px solid #fff;
     padding:15px;
     font-weight:bold;
@@ -158,12 +159,6 @@ div.notice {
 }
 .cinzel{
     font-family: 'Cinzel', Arial, sans-serif;
-}
-.blue{
-    color:#0f2359;
-}
-.pink{
-    color:#cc66cc;
 }
 .logo_box{}
 .sponsor_box{
@@ -292,14 +287,13 @@ ul.dropdown li a, ul.dropdown ul li a{
 }
 ul.dropdown ul 		{ width:145px;visibility:hidden;position:absolute;top:36px;z-index:400;margin:2px 0 0 2px;padding:0;border-top:0;}
 ul.dropdown ul li 		{ width:145px;z-index:500;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px; border:1px solid #297886; margin:0 auto;padding:0 0 6px 0;-webkit-box-shadow:  0px 7px 5px 0px rgba(0, 0, 0, .3);box-shadow:  0px 7px 5px 0px rgba(0, 0, 0, .3);}
-ul.dropdown ul li a		{ font-size:14px;background-color:#e97914;border:1px solid #fb8f23;}
-ul.dropdown ul li a:hover	{ background-color:#f78c1e;border:1px solid #ffab58;}
+ul.dropdown ul li a		{ font-size:14px;background-color:#f78c1e;border:1px solid #fb8f23;}
+ul.dropdown ul li a:hover	{ background-color:#e67a0b;border:1px solid #ffab58;}
 .headlink { }
 /******* END MENU ***********/
 /*********** START LISTENER BOX ******************/
 .listener_box{
 	width:660px;
-	/*background-color:#232323;*/
 	overflow:hidden;
 	padding:15px 5px;
                 margin-bottom:10px;
@@ -335,7 +329,8 @@ ul.dropdown ul li a:hover	{ background-color:#f78c1e;border:1px solid #ffab58;}
             clear:both;
             width:1000px;
             height:175px;
-            margin:-7px auto 0;
+            margin:0 auto 0;
+            padding-top:3px;
             background-color:#59dde2;
             -webkit-border-radius: 18px;
             -moz-border-radius: 18px;
@@ -351,7 +346,7 @@ ul.dropdown ul li a:hover	{ background-color:#f78c1e;border:1px solid #ffab58;}
 	float:left;
 	position:relative;
 	display:inline;
-	padding:20px 0 0 25px;
+	padding:30px 0 0 25px;
 	margin-right:-25px;
 }
 #ftr-right{
@@ -409,7 +404,7 @@ ul.ftr-links-list li{
 }
 ul.ftr-links-list li a{
 	color:#fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	text-decoration:none;
 	padding-left:35px;
 	font-size:12px;
@@ -437,9 +432,9 @@ ul.ftr-cities-list li{
 	line-height:1.2em;
 }
 ul.ftr-cities-list li a{
-	color:#f1e5dc;
+	color:#ffe5b9;
 	text-decoration:none;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	font-size:12px;
 	font-weight:700;
 }
@@ -460,7 +455,7 @@ ul.ftr-cities-list li a{
 	margin-top:10px;
 	line-height:1.2;
 	text-align:left;
-	color:#fff;
+	color:#25646f;
 	font-size:14px;
 }
 .info-right a{
@@ -471,12 +466,12 @@ ul.ftr-cities-list li a{
 }
 div.info-right p:first-child{
 	font-weight:700;
-	color:#fff;
+	color:#900;
 	margin-bottom:5px;
 	margin-top:0;
-	text-shadow: 1px 1px 1px #333;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
                 font-size: 1.2em;
-                font-family: 'Noto Sans', sans-serif;
+                font-family: 'Cinzel', sans-serif;
 }
 div.dbl-row p:first-child + p{
 	font-weight:700;
@@ -522,4 +517,7 @@ div.dbl-row p:first-child + p{
     margin:10px auto;
     background-color:#cdd6e9;
     overflow:auto;
+}
+.photo-gals a{
+    color:#21656d;
 }

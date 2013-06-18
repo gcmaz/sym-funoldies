@@ -1,0 +1,75 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Northern Arizona Weather - Prescott - Flagstaff - Sedona - Grand Canyon
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Northern Arizona Weather - Prescott - Flagstaff - Sedona - Grand Canyon"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="weather, Flagstaff, Prescott, Sedona, Grand Canyon"/>
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css" rel="stylesheet">
+        #weather { background: #6f9dbe;background: -webkit-gradient(linear, left top, left bottom, from(#adc7db), to(#6f9dbe));background: -moz-linear-gradient(top, #b2bcc8, #adc7db); width:400px;margin:4px auto;padding:10px 20px;overflow:hidden;border:1px solid #6591b3;border-radius:10px; }
+        #weather h2 {color:#444;font-size:2.0em;text-shadow:rgba(250, 250, 250, 0.8) -1px -1px 0;}
+        #weather p {font-size:40px;margin:20px 0 0;color:#fff;text-align:left;}
+        #weather p span {font-size:16px;padding-left:15px;color:#47657c;}
+        #weather a{display:block;clear:both;text-decoration:none;color:#222;font-size:12px;border:0; }
+        #weather a:hover { color: #000;text-decoration: underline;border: 0; }
+        .weather-links{margin:25px auto 0;}
+        a.cities{color:#21656d;font-weight:700;border:1px solid #7ad2d5;border-bottom:0;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:3px 5px;margin:10px 3px 0 3px;background-color:#a2ecef;cursor:pointer; }
+        a.cities:hover{background-color:#c0fdff;}
+    </style>
+{% endblock %}
+    
+{% block js_top %}
+    {{ parent () }}
+    <script type="text/javascript" src="{{asset('scripts/simpleWeather/jquery.simpleWeather-2.2.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $w = function($z,$woeid){
+                $.simpleWeather({
+                    zipcode: $z,
+                    woeid: $woeid,
+                    unit: 'f',
+                    success: function(weather) {
+                        html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+                        html += '<img style="float:left;" width="125px" src="'+weather.image+'">';
+                        html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<span>'+weather.currently+'</span></p>';
+                        html += '<a href="'+weather.link+'" target="_blank">View Forecast &raquo;</a>';
+                        $("#weather").html(html);
+                    },
+                    error: function(error) {
+                        $("#weather").html('<p>'+error+'</p>');
+                    }
+                });
+            }
+            $w('86301', '12794808');
+            $('#prescott').click(function(){ $w('86301', '12794808'); return false; });
+            $('#flagstaff').click(function(){ $w('86001', '12794772'); return false; });
+            $('#sedona').click(function(){ $w('86336', '12794784'); return false; });
+            $('#gc').click(function(){ $w('86023', '12794831'); return false; });
+        });
+    </script>
+{% endblock %}
+    
+{% block content %}
+    <div class="weather-links">
+        <a id="prescott" class="cities">Prescott</a>
+        <a id="flagstaff" class="cities">Flagstaff</a>
+        <a id="sedona" class="cities">Sedona</a>
+        <a id="gc" class="cities">Grand Canyon</a>
+    </div>
+    <div id="weather"></div>
+    <div>
+        <p class="yellow" style="font-size:11px;font-weight:700;margin:20px auto 10px;">Weather Brought To You By:</p>
+        <a href="http://www.flagstaffmedicalcenter.com/" target="_blank"><img src="{{asset('images/sponsors/fmc.jpg')}}" width="196" height="45" alt="Flagstaff Medical Center" style="margin:5px auto;" /></a>
+        <a href="http://www.superiorpropaneinc.com/" target="_blank"><img src="{{asset('images/sponsors/superior-propane.jpg')}}" width="168" height="46" alt="Superior Propane" style="margin:5px auto;" /></a>
+        <a href="http://www.wvmb.com/" target="_blank"><img src="{{asset('images/sponsors/wallick-volk.jpg')}}" width="160" height="46" alt="Wallick and Volk" style="margin:5px auto;" /></a>
+    </div>
+{% endblock %}

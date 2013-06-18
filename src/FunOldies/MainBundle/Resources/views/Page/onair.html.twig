@@ -1,0 +1,59 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    On Air Talent and Programming - Fun Oldies Radio - Prescott Arizona
+{% endblock %}
+    
+{% block description %}
+    <meta name="description" content="On Air Talent and Programming - Fun Oldies Radio"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/logo-oldies.png') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_onair') }}"/>
+    <meta property="og:title" content="On Air Talent and Programming - Fun Oldies Radio"/> 
+    <meta property="og:description" content="On Air Talent and Programming - Fun Oldies Radio - Prescott Arizona"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="on air, radio, talent, programming, Prescott, Prescott Valley"/>
+{% endblock %}
+    
+{% block content %}
+    <div class="onair centered">
+            <div class="info-left">
+                <a href="http://www.facebook.com/bo.woods.9" target="_blank">
+                    <img src="{{ asset('images/bo150x150.jpg') }}" alt="Bo Woods" width="150" height="150" border="0" />
+                </a>
+            </div>
+            <div class="info-right">
+                <p>Bo Woods <span style="color:#13a0e5;font-size:0.9em;">| Mornings 6 - 10a</span></p>
+	<p>Bo Woods is now delighted to call Prescott Arizona his new home! Bo is a seasoned Radio veteran with countless years of experience, and a tremendous amount of passion for providing his listeners with the music they crave and the stories they remember. Join Bo Weekday mornings from 6a - 10a on Fun Oldies 100.9 and 1450AM!</p>
+            </div>
+            <br class="clear"/>
+            <div class="spacer"></div>
+            <div class="info-left">
+                    <img src="{{ asset('images/lew-rees150x150.jpg') }}" alt="Lew Rees" width="150" height="150" border="0" />
+            </div>
+            <div class="info-right">
+            	<p>Lew & Friends Radio Show <span style="color:#13a0e5;font-size:0.9em;">| Sat Mornings 8 - 9a</span></p>
+                <p>Lew Rees and friends presented by Skin Perfection every Saturday from 8-9am. Tune in for a wildly hillarious hour full of great friends, guests, laughs, entertainment and lots and lots of prizes! Brought to you in part by Fain Signature Group, Bufallo Wild Wings and Patriot Disposal.</p>
+            </div>
+            <br class="clear"/>
+            <div class="info-left">
+                    <img src="{{ asset('images/marnie150x150.jpg') }}" alt="Marnie - Up To The Minute" width="150" height="150" border="0" />
+            </div>
+            <div class="info-right">
+            	<p>Up To The Minute With Marnie <span style="color:#13a0e5;font-size:0.9em;">| Sat Mornings 9 - 10a</span></p>
+                <p>Up to the Minute with Marnie is an entertaining one hour show hosted by Prescott Valley Chamber CEO Marnie Uhl and features guests from the quad-city area. Want to find out about what’s happening around town? Tune in for all the great information on things to do, places to see and people to know.</p>
+            </div>
+            <br class="clear"/>
+            <div class="spacer"></div>
+            <br class="clear"/>
+            <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_onair') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+            <br class="clear"/><br/>
+        </div>
+    </div>
+    <br/>
+{% endblock %}

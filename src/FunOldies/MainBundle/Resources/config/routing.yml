@@ -4,7 +4,7 @@ fo_homepage:
     methods: [GET|POST]
     
 fo_contact:
-    path: /contact/prescott/radio/99-1
+    path: /contact/prescott/radio/oldies
     defaults: { _controller: FunOldiesMainBundle:Page:contact }
     methods: [GET|POST]
 
@@ -21,11 +21,6 @@ fo_onair:
 fo_photos:
     path: /photos/prescott
     defaults: { _controller: FunOldiesMainBundle:Page:photos }
-    methods: [GET|POST]
-    
-fo_songrequest:
-    path: /radio/songs/requests
-    defaults: { _controller: FunOldiesMainBundle:Page:songrequest }
     methods: [GET|POST]
     
 fo_concerts:
@@ -59,9 +54,9 @@ fo_advertise_show:
     methods: [GET]
     
 fo_news:
-    path: /prescott/news/weather
+    path: /prescott/news
     defaults: { _controller: FunOldiesMainBundle:Page:news }
-    methods: [GET|POST]
+    methods: [GET]
 
 fo_contest:
     path: /contest/{contest}

@@ -1,7 +1,7 @@
 <?php
     // for photos page, NOT homepage snapwidget
     $display_block = "";
-    $pageUrl = $this->generateUrl('Magic991_photos');
+    $pageUrl = $this->generateUrl('fo_photos');
     if(isset($_GET['a'])){
             $a = $_GET['a'];
             $display_block = "
@@ -20,10 +20,10 @@
             ";
     } else {
             $display_block = "
-                <h1>Select A Gallery:</h1>
+                <p style=\"color:#63b4be;font-weight:600;\">Select A Gallery:</p>
                 <br/>
-                <p><a href=\"$pageUrl?a=333184483435255\">
-                        Gallery One
+                <p><a href=\"$pageUrl?a=443858142350397\">
+                        Fun Oldies Photos
                 </a></p>
                ";
     }

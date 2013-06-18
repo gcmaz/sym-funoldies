@@ -1,0 +1,67 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Yavapai Humane Society - Pet Of The Week - Fun Oldies Radio
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Yavapai Humane Society's Pet of the Week on Fun Oldies Radio"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/pet320x150.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_pet') }}"/>
+    <meta property="og:title" content="Yavapai Humane Society's Pet of the Week on Fun Oldies Radio"/> 
+    <meta property="og:description" content="Yavapai Humane Society's Pet of the Week on Prescott, AZ Radio - Fun Oldies Radio"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="adopt, pet, pet adoption, Yavapai Humane Society, pet of the week"/>
+{% endblock %}
+    
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+        .petwrapper{text-align:left;margin:0 auto;background-color:#fff;width:670px;}
+        .pethdr{background-image: url('{{asset("images/pet-of-week-logo.jpg")}}');width:670px;height:141px;text-align:right;}
+        .pets{width:670px;padding:5px;color:#663300;}
+    </style>
+{% endblock %}
+    
+{% block content %}
+<div class="petwrapper">
+     <div class="pethdr" >
+            <a href="http://www.bandlflooring.com" target="_blank"><img src="{{asset('images/sponsors/potw_b&l.jpg')}}" width="146" height="140" alt="B and L Flooring" border="0" style="margin:5px;" /></a>
+            <a href="http://www.yavapaihumane.org" target="_blank"><img src="{{asset('images/sponsors/yavapai-humane-society.jpg')}}" width="124" height="140" alt="Yavapai Humane Society" border="0" style="margin:5px;" /></a>
+    </div>
+    <div class="pets">
+            <p style="text-align:left;font-size:14px;margin-left:5px;line-height:1.5;">
+                <img src="http://funoldies.gcmaz.com/images/pet-of-week_main.jpg" width="257" height="233" alt="Pet Of The Week" align="right" border="0" style="margin:2px 20px;" />					
+                <span style="font-weight:700;">TABITHA</span> - One wouldn't think this frisky feline who lovs to talk is a mature 10 years old. Tabitha prefers to be in charge of her surroundngs and has no problem telling you how she thinks things should be. We have been informed that she is good with dogs and other cats. 
+                <br/>TABITHA qualifies for our 100% discounted, Senior for Senior program when her adopter is 59 or older! Also, all of our cats and kittens are on the Buddy System where there is only One adoption fee for Two buddies; Tabitha is reportedly good with dog pals too!
+            </p>
+            <br style="clear:both;" /><br/>
+            <div style="float:left;margin:0 5px;width:350px;">
+                <p style="font-size:11px;margin:5px 10px;color:#000;">The <strong>Yavapai Humane Society</strong> has teamed up with <strong>Fun Oldies</strong> to assist in finding deserving pets a new home.  Every week we'll feature new dogs and cats available for adoption on our <strong>Pet Of The Week</strong> page, brought to you by the <a href="http://www.yavapaihumane.org" target="_blank" style="font-weight:bold;color:#0f57a8;">Yavapai Humane Society</a>, serving the entire Yavapai county area.</p>
+                <a href="https://www.yavapaihumane.org/index.cfm?fuseaction=donate.start&destination=E&eventID=504" target="_blank"><img src="{{asset('images/pet-donate.png')}}" width="218" height="53" alt="Donations Welcome" border="0" style="margin:5px auto;"/></a>
+            </div>
+            <div style="float:right;padding:0;width:300px;margin-top:0px;">
+                <p style="margin-left:5px;text-align:left;font-size:14px;line-height:1.5;color:#000;">
+                <span style="font-weight:bold;">How to adopt me</span><br/>
+                <a href="http://www.yavapaihumane.org/index.cfm?fuseaction=cms.page&id=1068" style="font-weight:bold;color:#0f57a8;" target="_blank">I'm at Yavapai Humane Society &raquo;</a><br/>
+                <span style="text-decoration:underline;font-weight:bold;">Call</span>: 928-445-2666<br/>
+                <span style="text-decoration:underline;font-weight:bold;">Visit</span>: 1625 Sundog Ranch Rd<br/>Prescott, AZ 86301<br/>
+                <span style="text-decoration:underline;font-weight:bold;">Hours</span>: M-F 11am-5pm<br/>Sunday 11am-3pm<br/>Closed Tuesdays<br/>
+                </p>
+            </div>
+            <br style="clear:both;" />
+     </div>
+    <div>
+           <iframe align="left" frameborder="0" scrolling="yes" src="http://www.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=All&amp;sex=A&amp;agegroup=All&amp;location=&amp;site=&amp;onhold=A&amp;orderby=ID&amp;colnum=4&amp;css=http://sms.petpoint.com/WebServices/adoptablesearch/css/styles.css&amp;authkey=rw5ap4i0hg7nl8f046cw8s0evp8xays1cc3en56esvlexogcno&amp;recAmount=&amp;detailsInPopup=Yes&amp;featuredPet=only&amp;stageID=" width="98%" height="400"></iframe>
+    </div>
+    <br/>
+    <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_pet') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    <br/>
+</div>
+{% endblock %}

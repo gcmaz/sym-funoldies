@@ -1,0 +1,68 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Contact Fun Oldies 100.9 / 1450am - Prescott Radio
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Contact Fun Oldies 100.9 / 1450am - Prescott Radio"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="Prescott Radio, oldies, radio, Prescott"/>
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+        form.contactform { font-size: 16px;color:#13a0e5; }
+        form.contactform div { clear: left; margin-bottom: 10px; }
+        form.contactform label { float: left; margin-right: 10px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+        form.contactform input[type="text"],
+        form.contactform input[type="email"]
+            { width: 400px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.contactform select { width:400px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.contactform textarea { width: 400px; height: 150px; line-height: 26px; font-size: 20px; }
+        form.contactform input[type="submit"] { margin-left: 160px; width: 408px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.contactform ul li { color: #c00; margin-bottom: 5px; }
+    </style>
+{% endblock %}
+    
+{% block content %}
+    <div style="width:290px;float:left;margin:10px 10px 20px 20px;padding:5px 0;color:#173739;line-height:1.4;font-weight:600;background-color: rgba(19,160,229,.1);border:1px solid #fff;" class="textshadow">
+        <h1 class="cinzel">PRESCOTT OFFICE:</h1>
+        116 S. Alto<br />
+        Prescott, AZ 86301<br />
+        Office: 928-445-6880<br />
+        Fax: 928-445-6852
+    </div>
+    <div style="width:290px;float:right;margin:10px 20px 20px 10px;padding:5px 0;color:#173739;line-height:1.4;font-weight:600;background-color: rgba(19,160,229,.1);border:1px solid #fff;" class="textshadow">
+        <h1 class="cinzel">FLAGSTAFF OFFICE:</h1>
+        1117 W. Route 66<br />
+        Flagstaff, AZ 86001<br />
+        Office: 928-774-5231<br />
+        Fax: 928-779-2988
+    </div>
+    <h2 class="cinzel">STUDIO LINE: 928-779-5151</h2>
+    {% for flashMessage in app.session.flashbag.get('contactnotice') %}
+        <div class="notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    <div style="width:90%;text-align:left;">
+        <form action="{{ path('fo_contact') }}" method="post" {{ form_enctype(form) }} class="contactform">
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.department) }}
+            {{ form_row(form.comments) }}
+                
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <p style="width:70%;color:#12a0e7;font-weight:600;margin:40px 0 20px 120px;" class="textshadow">Interested in working for Fun Oldies, <a href="{{path('fo_jobs')}}" style="color:#13a0e5;">click here</a> for a list of current job postings.</p>
+    
+{% endblock %}

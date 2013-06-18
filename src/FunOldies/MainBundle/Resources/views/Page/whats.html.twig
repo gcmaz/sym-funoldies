@@ -1,0 +1,43 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Events and Happenings - Prescott - Prescott Valley - Northern Arizona - Fun Oldies
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Events and Happenings - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="activity" />   
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/logo-oldies.png') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_whats') }}"/>
+    <meta property="og:title" content="Events and Happenings - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/> 
+    <meta property="og:description" content="Events and Happenings - Prescott - Prescott Valley - Northern Arizona - Fun Oldies"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="events, happenings, things to do, Prescott, Prescott Valely, Northern Arizona"/>
+{% endblock %}
+    
+{# block exp_leaderboard %}
+    <div id="expleaderboard">
+        <a href="http://www.collegeamerica.edu/" target="_blank">
+            <img src="{{ asset('images/660x150/college-america.jpg') }}" width="660" height="150" alt="Get Your Degree in as little as 15-20 months at College America" />
+        </a>
+    </div>
+{% endblock #}
+    
+{% block leftcol_ad %}
+    <a href="http://tomar.pcpaindoctors.com/index.php" target="_blank">
+        <img src="{{asset('images/300x250/tomar.jpg')}}" width="300" height="250" alt="Tomar Pain Center" border="0" />
+    </a>
+{% endblock %}
+    
+{% block content %}
+    <h2 class="cinzel">What's Happening</h2>
+    <iframe src="http://funoldies.gcmaz.com/whats2.php" width="660" height="1100"></iframe>
+    <br/>
+    <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_whats') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    <br class="clear"/>
+{% endblock %}

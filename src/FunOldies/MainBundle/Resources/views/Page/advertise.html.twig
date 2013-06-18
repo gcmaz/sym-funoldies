@@ -1,0 +1,142 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Advertise - Prescott Radio, Northern Arizona Radio - Fun Oldies
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Advertise - Prescott Radio, Northern Arizona Radio - Fun Oldies"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="Advertise, Prescott Radio, Northern Arizona Radio"/>
+{% endblock %}
+    
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+        form.advform { font-size: 16px;color:#13a0e5; }
+        form.advform div { clear: left; margin-bottom: 10px; }
+        form.advform label { float: left; margin-right: 10px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+        form.advform input[type="text"],
+        form.advform input[type="email"]
+            { width: 400px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.advform select { width:400px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.advform textarea { width: 400px; height: 150px; line-height: 26px; font-size: 20px; }
+        form.advform input[type="submit"] { margin-left: 160px; width: 408px; line-height: 26px; font-size: 20px; min-height: 26px; }
+        form.advform ul li { color: #c00; margin-bottom: 5px; }
+        /* adv menu */
+        ul.dropdown2 { position:relative; }
+        ul.dropdown2 li {
+                width:150px;
+                height:32px;
+                z-index:300;
+                list-style-type:none;
+                line-height:30px;
+                vertical-align:middle;
+                margin:4px auto;
+                display:inline-block;
+        }
+        ul.dropdown2 li a:hover { }
+        ul.dropdown2 li a, ul.dropdown2 ul li a{
+                color:#0f7fb6;
+                text-decoration:none;
+                font-size:1.4em;
+                font-weight:700;
+                font-family: 'Unica One', cursive;
+                text-shadow:1px 1px 1px rgba(0,0,0,.2);
+                padding:3px 0;
+                display:block;
+        }
+        ul.dropdown2 ul 	{ width:300px;visibility:hidden;position:absolute;top:36px;z-index:400;margin-top:2px;padding:0;text-align:left;}
+        ul.dropdown2 ul li 	{ width:300px;z-index:500;margin:0;padding:0 0 6px 6px;}
+        ul.dropdown2 ul li a	{ font-size:0.8em;background-color:#dcf4ff;padding-left:5px;border:1px solid #92dbff;font-family:arial;}
+        ul.dropdown2 ul li a:hover { background-color:#c8edff;border:1px solid #68c1ec;}
+        .headlink2 { }
+        .sales{ padding:4px;margin:5px auto; }
+        .mediakits{ text-align:left;font-size:12px;line-height:1.7;padding:10px;width:90%;border:1px solid #92dbff;margin:10px auto;background-color:#fff;overflow:auto; }
+        .mediakits a{ color:#454545;font-weight:bold;text-decoration:none; }
+        .mediakits h5 {color:#c00;font-weight:bold;}
+    </style>
+{% endblock %}
+    
+{% block js_top %}
+    {{ parent() }}
+    <script type="text/javascript">
+        /*--- adv dropdown menu  */
+        $(function(){
+            $("ul.dropdown2 li").hover(function(){
+                $(this).addClass("hover");
+                $('ul:first',this).css('visibility', 'visible');
+            }, function(){
+                $(this).removeClass("hover");
+                $('ul:first',this).css('visibility', 'hidden');
+            });
+            $("ul.dropdown2 li ul li:has(ul)").find("a:first").append(" &raquo; ");
+        });
+    </script>
+{% endblock %}
+    
+{% block content %}
+    {% if (app.session.get('advauth') != 1) %}
+        {#display the form #}
+        <p style="clear:both;font-size:14px;font-weight:bold;margin:5px auto;padding:5px 0;color:#13a0e5;" class="centered">
+            To access our advertising information, please fill out the following form.
+        </p>
+        <div style="width:90%;margin:40px 0 0 0;text-align:left;">
+            <form action="{{ path('fo_advertise') }}" method="post" {{ form_enctype(form) }} class="advform">
+                {{ form_errors(form) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.phone) }}
+                {{ form_row(form.comments) }}
+                {{ form_rest(form) }}
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    {% else %}
+        {#display default after form#}
+        <div>
+            <ul class="dropdown2">
+                <li class="headlink2">
+                    <a href="{{ path('fo_advertise_show', {'show': 'contacts'}) }}">CONTACTS</a>
+                </li>
+                <li class="headlink2">
+                    <a href="#">MEDIA KITS</a>
+                    <ul>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'kaff'}) }}">92.9 | KAFF Country</a></li>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'mountain'}) }}">93.9 | KMGN The Mountain</a></li>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'flagstaff-country'}) }}">93.5/AM930 | KAFFAM Flagstaff Country</a></li>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'hits'}) }}">106.1 | KFSZ Hits 106</a></li>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'magic'}) }}">99.1 | KTMG Magic</a></li>
+                            <li><a href="{{ path('fo_advertise_show', {'show': 'oldies'}) }}">100.0/1450AM | KNOT Fun Oldies</a></li>
+                    </ul>
+                </li>
+                <li class="headlink2">
+                    <a href="{{ path('fo_advertise_show', {'show': 'internet'}) }}">INTERNET INFO</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            {% if show == 'contacts' %}
+                {% include 'FunOldiesMainBundle::inc/adv.managers.php' %}
+            {% elseif show == 'kaff' %}
+                {% include 'FunOldiesMainBundle::inc/adv.kaff.php' %}
+            {% elseif show == 'mountain' %}
+                {% include 'FunOldiesMainBundle::inc/adv.kmgn.php' %}
+            {% elseif show == 'flagstaff-country' %}
+                {% include 'FunOldiesMainBundle::inc/adv.kaffam.php' %}
+            {% elseif show == 'hits' %}
+                {% include 'FunOldiesMainBundle::inc/adv.kfsz.php' %}
+            {% elseif show == 'magic' %}
+                {% include 'FunOldiesMainBundle::inc/adv.ktmg.php' %}
+            {% elseif show == 'oldies' %}
+                {% include 'FunOldiesMainBundle::inc/adv.knot.php' %}
+            {% elseif show == 'internet' %}
+                {% include 'FunOldiesMainBundle::inc/adv.internet-info.php' %}
+            {% endif %}
+        </div>
+        
+    {% endif %}
+{% endblock %}
