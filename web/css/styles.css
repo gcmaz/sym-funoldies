@@ -430,10 +430,7 @@ ul.ftr-cities-list li{
 	margin:1px 0;
 	padding:1px 0;
 	line-height:1.2em;
-}
-ul.ftr-cities-list li a{
-	color:#ffe5b9;
-	text-decoration:none;
+                color:#ffe5b9;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	font-size:12px;
 	font-weight:700;
