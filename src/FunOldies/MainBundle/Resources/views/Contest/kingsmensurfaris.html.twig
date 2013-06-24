@@ -1,0 +1,42 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Win Tickets To The Kingsmen and The Surfaris - Summer Concert July 27th, Tim's Toyota Center
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Win Tickets To The Kingsmen and The Surfaris - Summer Concert July 27th, Tim's Toyota Center - Listen to Fun Oldies - Northern Arizona Oldies Radio"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/kingsmen-surfaris.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'music-and-money'}) }}"/>
+    <meta property="og:title" content="Win Tickets To The Kingsmen and The Surfaris - Summer Concert July 27th, Tim's Toyota Center"/> 
+    <meta property="og:description" content="Win Tickets To The Kingsmen and The Surfaris - Summer Concert July 27th, Tim's Toyota Center - Listen to Fun Oldies - Northern Arizona Oldies Radio"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="radio, contest, Kingsmen, Surfaris, win tickets"/>
+{% endblock %}
+
+{% block content %}
+    <div class="contest">
+        <a href="http://www.timstoyotacenter.com/events/details/171-Kingsmen-Surfaris" target="_blank">
+            <img src="{{asset('images/660x250/kingsmen-surfaris.jpg')}}" width="660" height="250" alt="Win Tickets to The Kingsmen and The Surfaris - Radio Contest - Prescott" />
+        </a>
+        <p style="font-size:1.3em;font-weight:700;padding:0 20px 10px;line-height:1.5;" class="burgundy cinzel">
+            Listen to Fun Oldies for a chance to win tickets to see The Kingsmen &amp; The Surfaris in concert at Tim's Toyota Center on July 27th!
+        </p>
+        <div class="accentbox">
+            <p class="unica blue" style="font-size:1.5em;">July 8th - 12th - FIVE pairs of 3rd Row Seats</p>
+            <p class="unica orange" style="font-size:1.5em;">July 15th - 19th - FIVE pairs of 2nd Row Seats</p>
+            <p class="unica burgundy" style="font-size:1.5em;">July 22nd - 26th - FIVE pairs of 1st Row Seats</p>
+        </div>
+        <br/>
+        <div class="sponsors">
+            <a href="http://www.timstoyotacenter.com/events/details/171-Kingsmen-Surfaris" target="_blank"><img src="{{ asset('images/sponsors/tims-toyota-bar.jpg')}}" width="500" height="66" alt="Kingsmen and Surfaris at Tim's Toyota Center" /></a>
+        </div>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'kingsmen-surfaris'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+{% endblock %}

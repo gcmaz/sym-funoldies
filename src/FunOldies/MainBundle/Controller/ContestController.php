@@ -12,14 +12,14 @@ class ContestController extends Controller
 {
     public function contestAction($contest)
     {
-        // DEFAULT
+        // **** DEFAULT ****
         if($contest == 'default'){
             // could display list of contests here
             return $this->render('Magic991MainBundle:Page:contest.html.twig', array(
                 'contest' => $contest
             ));
             
-        // QUEEN OF CAFFEINE
+        // **** QUEEN OF CAFFEINE ****
         } else if ($contest == 'queen-of-caffeine'){
             $data = new Caffeine ();
             $form = $this->createForm(new CaffeineType(), $data);
@@ -48,9 +48,15 @@ class ContestController extends Controller
                 'form' => $form->createView()
             ));
         
-        // MUSIC AND MONEY
+        // **** MUSIC AND MONEY ****
         } else if ($contest == 'music-and-money'){
             return $this->render('FunOldiesMainBundle:Contest:musicandmoney.html.twig', array(
+                'contest' => $contest
+            ));
+        
+        // **** MUSIC AND MONEY ****
+        } else if ($contest == 'kingsmen-surfaris'){
+            return $this->render('FunOldiesMainBundle:Contest:kingsmensurfaris.html.twig', array(
                 'contest' => $contest
             ));
         }

@@ -156,9 +156,19 @@ div.notice {
 }
 .unica{
     font-family: 'Unica One', cursive;
+    text-transform:uppercase;
 }
 .cinzel{
     font-family: 'Cinzel', Arial, sans-serif;
+}
+.blue{
+    color:#003399;
+}
+.orange{
+    color:#ff6600;
+}
+.burgundy{
+  color:#600;
 }
 .logo_box{}
 .sponsor_box{
@@ -491,9 +501,11 @@ div.dbl-row p:first-child + p{
     font-weight:700;
     line-height:1.4;
     font-size:1.1em;
-    color:#000;
     width:95%;
     margin:auto;
+}
+.sponsors{
+    margin:5px auto;
 }
 .sponsors ul li a img{
 	margin:15px auto;
@@ -517,4 +529,16 @@ div.dbl-row p:first-child + p{
 }
 .photo-gals a{
     color:#21656d;
+}
+.accentbox{
+    background-color:#d5fdff;
+    width:90%;
+    margin:auto;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    /*outer glow*/
+    -webkit-box-shadow:  0px 0px 2px 2px rgba(255, 204, 0, .4);
+    box-shadow:  0px 0px 2px 2px rgba(255, 204, 0, .4);
+    border:1px solid #f99d42;
 }
