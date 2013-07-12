@@ -12,53 +12,54 @@ class ContestController extends Controller
 {
     public function contestAction($contest)
     {
-        // **** DEFAULT ****
-        if($contest == 'default'){
-            // could display list of contests here
-            return $this->render('Magic991MainBundle:Page:contest.html.twig', array(
-                'contest' => $contest
-            ));
-            
-        // **** QUEEN OF CAFFEINE ****
-        } else if ($contest == 'queen-of-caffeine'){
-            $data = new Caffeine ();
-            $form = $this->createForm(new CaffeineType(), $data);
+        switch($contest){
+            // **** DEFAULT ****
+            case 'default' :
+                // could display list of contests here
+                return $this->render('Magic991MainBundle:Page:contest.html.twig', array(
+                    'contest' => $contest
+                ));
 
-            $request = $this->getRequest();
+            // **** QUEEN OF CAFFEINE ****
+            case 'queen-of-caffeine' :
+                $data = new Caffeine ();
+                $form = $this->createForm(new CaffeineType(), $data);
 
-            if ($request->getMethod() == 'POST'){
-                 $form->bind($request);
+                $request = $this->getRequest();
 
-                if($form->isValid()){
-                    $message = \Swift_Message::newInstance()
-                        ->setSubject('Fun Oldies | Queen of Caffeine Entry')
-                        ->setFrom($data->getEmail())
-                        ->setReplyTo($data->getEmail())
-                        ->setTo($this->container->getParameter('fo.emails.caffeine_email'))
-                        ->setBody($this->renderView('FunOldiesMainBundle:Email:caffeine.txt.twig', array('data' => $data)));
-                    $this->get('mailer')->send($message);
+                if ($request->getMethod() == 'POST'){
+                     $form->bind($request);
 
-                    $this->get('session')->getFlashBag()->add('caffeinenotice', 'Successfully sent!');
+                    if($form->isValid()){
+                        $message = \Swift_Message::newInstance()
+                            ->setSubject('Fun Oldies | Queen of Caffeine Entry')
+                            ->setFrom($data->getEmail())
+                            ->setReplyTo($data->getEmail())
+                            ->setTo($this->container->getParameter('fo.emails.caffeine_email'))
+                            ->setBody($this->renderView('FunOldiesMainBundle:Email:caffeine.txt.twig', array('data' => $data)));
+                        $this->get('mailer')->send($message);
 
-                    //redirect - important to prevent repost from page refresh
-                    return $this->redirect($this->generateUrl('fo_contest', array('contest' => 'queen-of-caffeine')));
+                        $this->get('session')->getFlashBag()->add('caffeinenotice', 'Successfully sent!');
+
+                        //redirect - important to prevent repost from page refresh
+                        return $this->redirect($this->generateUrl('fo_contest', array('contest' => 'queen-of-caffeine')));
+                    }
                 }
-            }
-            return $this->render('FunOldiesMainBundle:Contest:caffeine.html.twig', array(
-                'form' => $form->createView()
-            ));
-        
-        // **** MUSIC AND MONEY ****
-        } else if ($contest == 'music-and-money'){
-            return $this->render('FunOldiesMainBundle:Contest:musicandmoney.html.twig', array(
-                'contest' => $contest
-            ));
-        
-        // **** MUSIC AND MONEY ****
-        } else if ($contest == 'kingsmen-surfaris'){
-            return $this->render('FunOldiesMainBundle:Contest:kingsmensurfaris.html.twig', array(
-                'contest' => $contest
-            ));
+                return $this->render('FunOldiesMainBundle:Contest:caffeine.html.twig', array(
+                    'form' => $form->createView()
+                ));
+
+            // **** MUSIC AND MONEY ****
+            case 'music-and-money' :
+                return $this->render('FunOldiesMainBundle:Contest:musicandmoney.html.twig', array(
+                    'contest' => $contest
+                ));
+
+            // **** KINGSMEN SURFARIS ****
+            case 'kingsmen-surfaris' :
+                return $this->render('FunOldiesMainBundle:Contest:kingsmensurfaris.html.twig', array(
+                    'contest' => $contest
+                ));
         }
     }
 }
