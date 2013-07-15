@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 use FunOldies\MainBundle\Entity\Caffeine;
 use FunOldies\MainBundle\Form\CaffeineType;
+use FunOldies\MainBundle\Entity\GenContest;
+use FunOldies\MainBundle\Form\GenContestType;
 
 
 class ContestController extends Controller
@@ -46,6 +48,35 @@ class ContestController extends Controller
                     }
                 }
                 return $this->render('FunOldiesMainBundle:Contest:caffeine.html.twig', array(
+                    'form' => $form->createView()
+                ));
+                
+            // **** BEATLES VS STONES ****
+            case 'beatles-vs-stones' :
+                $data = new GenContest ();
+                $form = $this->createForm(new GenContestType(), $data);
+
+                $request = $this->getRequest();
+
+                if ($request->getMethod() == 'POST'){
+                     $form->bind($request);
+
+                    if($form->isValid()){
+                        $message = \Swift_Message::newInstance()
+                            ->setSubject('Fun Oldies | Beatles vs. Stones Entry')
+                            ->setFrom($data->getEmail())
+                            ->setReplyTo($data->getEmail())
+                            ->setTo($this->container->getParameter('fo.emails.gencontest_email'))
+                            ->setBody($this->renderView('FunOldiesMainBundle:Email:beatlesvsstones.txt.twig', array('data' => $data)));
+                        $this->get('mailer')->send($message);
+
+                        $this->get('session')->getFlashBag()->add('bvssnotice', 'Successfully sent!');
+
+                        //redirect - important to prevent repost from page refresh
+                        return $this->redirect($this->generateUrl('fo_contest', array('contest' => 'beatles-vs-stones')));
+                    }
+                }
+                return $this->render('FunOldiesMainBundle:Contest:beatlesvsstones.html.twig', array(
                     'form' => $form->createView()
                 ));
 
