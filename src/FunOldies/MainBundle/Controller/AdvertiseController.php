@@ -20,19 +20,26 @@ class AdvertiseController extends Controller
                 $form->bind($request);
 
                 if($form->isValid()){
-                    //perform action
-                    $message = \Swift_Message::newInstance()
-                        ->setSubject('Fun Oldies | Advertising Form')
-                        ->setFrom('advertise@funoldiesnow.com')
-                        ->setTo($this->container->getParameter('fo.emails.advertise_email'))
-                        ->setBody($this->renderView('FunOldiesMainBundle:Email:advertise.txt.twig', array('advcontact' => $advcontact)));
-                    $this->get('mailer')->send($message);
+                    if($advcontact->getFeedme() === null){
+                        //not spam
+                        $message = \Swift_Message::newInstance()
+                            ->setSubject('Fun Oldies | Advertising Form')
+                            ->setFrom($advcontact->getEmail())
+                            ->setReplyTo($advcontact->getEmail())
+                            ->setTo($this->container->getParameter('fo.emails.advertise_email'))
+                            ->setBody($this->renderView('FunOldiesMainBundle:Email:advertise.txt.twig', array('advcontact' => $advcontact)));
+                        $this->get('mailer')->send($message);
+
+                        $this->get('session')->getFlashBag()->add('advnotice', 'Successfully sent!');
+                        $this->get('session')->set('advauth', 1);
+
+                        //redirect - important to prevent repost from page refresh
+                        return $this->redirect($this->generateUrl('fo_advertise_show', array('show' => 'contacts')));
                     
-                    $this->get('session')->getFlashBag()->add('advnotice', 'Successfully sent!');
-                    $this->get('session')->set('advauth', 1);
-                    
-                    //redirect - important to prevent repost from page refresh
-                    return $this->redirect($this->generateUrl('fo_advertise_show', array('show' => 'contacts')));
+                    } else {
+                        // spam - exit but don't send email and don't show managers page
+                        return $this->redirect($this->generateUrl('fo_advertise'));
+                    }
                 }
             }
             return $this->render('FunOldiesMainBundle:Page:advertise.html.twig', array(

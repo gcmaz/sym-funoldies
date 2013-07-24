@@ -1,6 +1,6 @@
 parameters:
-  fo.emails.contact_email: [jeff.basham@kaff.com]
+  fo.emails.contact_email: [jeff.basham@kaff.com,webmaster@funoldiesnow.com]
   fo.emails.advertise_email: [webmaster@funoldiesnow.com, jeff.basham@kaff.com, karen.kinney@kaff.com, clay.mccauslin@kaff.com, patrick@magic991.com]
-  fo.emails.caffeine_email: [webmaster@funoldiesnow.com, alexa@magic991.com, loree@magic991.com]
+  fo.emails.caffeine_email: [alexa@magic991.com, loree@magic991.com]
   fo.emails.gencontest_email: [webmaster@funoldiesnow.com, alexa@magic991.com, bo@funoldiesnow.com]
   fo.emails.webmaster_email: webmaster@funoldiesnow.com

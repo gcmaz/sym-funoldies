@@ -87,6 +87,7 @@
             <form action="{{ path('fo_advertise') }}" method="post" {{ form_enctype(form) }} class="advform">
                 {{ form_errors(form) }}
                 {{ form_row(form.name) }}
+                <div class="feedme">{{ form_row(form.feedme)}}</div>
                 {{ form_row(form.email) }}
                 {{ form_row(form.phone) }}
                 {{ form_row(form.comments) }}

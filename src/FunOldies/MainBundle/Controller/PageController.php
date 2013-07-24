@@ -50,18 +50,25 @@ class PageController extends Controller
              $form->bind($request);
             
             if($form->isValid()){
-                $message = \Swift_Message::newInstance()
-                    ->setSubject('Fun Oldies | Contact Form')
-                    ->setFrom($contact->getEmail())
-                    ->setReplyTo($contact->getEmail())
-                    ->setTo($this->container->getParameter('fo.emails.contact_email'))
-                    ->setBody($this->renderView('FunOldiesMainBundle:Email:contact.txt.twig', array('contact' => $contact)));
-                $this->get('mailer')->send($message);
-                
-                $this->get('session')->getFlashBag()->add('contactnotice', 'Successfully sent!');
-                
-                //redirect - important to prevent repost from page refresh
-                return $this->redirect($this->generateUrl('fo_contact'));
+                if($contact->getFeedme() === null){
+                    //not spam
+                    $message = \Swift_Message::newInstance()
+                        ->setSubject('Fun Oldies | Contact Form')
+                        ->setFrom($contact->getEmail())
+                        ->setReplyTo($contact->getEmail())
+                        ->setTo($this->container->getParameter('fo.emails.contact_email'))
+                        ->setBody($this->renderView('FunOldiesMainBundle:Email:contact.txt.twig', array('contact' => $contact)));
+                    $this->get('mailer')->send($message);
+
+                    $this->get('session')->getFlashBag()->add('contactnotice', 'Successfully sent!');
+
+                    //redirect - important to prevent repost from page refresh
+                    return $this->redirect($this->generateUrl('fo_contact'));
+                    
+                } else {
+                    // spam - exit but don't send email and don't show managers page
+                    return $this->redirect($this->generateUrl('fo_contact'));
+                }
             }
         }
         return $this->render('FunOldiesMainBundle:Page:contact.html.twig', array(

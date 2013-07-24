@@ -24,6 +24,8 @@ class Contact
     protected $id;
     
     protected $name;
+    
+    protected $feedme;
 
     protected $email;
     
@@ -55,6 +57,14 @@ class Contact
         $this->name = $name;
     }
 
+    public function getFeedme(){
+        return $this->feedme;
+    }
+
+    public function setFeedme($feedme){
+        $this->feedme = $feedme;
+    }
+    
     public function getEmail(){
         return $this->email;
     }
