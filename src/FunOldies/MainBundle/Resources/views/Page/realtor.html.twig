@@ -1,0 +1,102 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    A Dream Home in Prescott, Arizona For Sale
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="A Dream Home in Prescott, Arizona For Sale"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/find-main-image.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_realtor') }}"/>
+    <meta property="og:title" content="A Dream Home in Prescott, Arizona For Sale"/> 
+    <meta property="og:description" content="A Dream Home in Prescott, Arizona For Sale"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="dream home, Prescott, Don Karcie, Re/max"/>
+{% endblock %}
+    
+{% block styles %}
+    {{parent()}}
+    <link href='http://fonts.googleapis.com/css?family=Donegal+One' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        .realestate{text-align:left;border:1px solid #29344e;background-color:#000;color:#fff;}
+        .re-hdr{
+            height:120px;
+            width:100%;
+            background: #232a3a; /* Old browsers */
+            background: -moz-linear-gradient(top,  #232a3a 0%, #131720 30%, #39445e 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#232a3a), color-stop(30%,#131720), color-stop(100%,#39445e)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #232a3a 0%,#131720 30%,#39445e 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #232a3a 0%,#131720 30%,#39445e 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #232a3a 0%,#131720 30%,#39445e 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #232a3a 0%,#131720 30%,#39445e 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232a3a', endColorstr='#39445e',GradientType=0 ); /* IE6-9 */
+        }
+        p.re-addy{ color:#a6dcff;font-weight:600;padding:5px; }
+        img.re-main { padding:5px; }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="realestate">
+        <div class="re-hdr">
+            <div style="float:left;width:45%;">
+                <img src="{{asset('images/sponsors/don-karcie-remax.jpg')}}" width="67" height="100" alt="Don Karcie Remax Realty Prescott" style="margin:10px 10px 0 30px;float:left;"/>
+                <p style="color:#fff;padding-top:15px;font-weight:600;">Don Karcie, MBA</p>
+                <p style="color:#d3d3d3;font-size:0.8em;">RE/MAX Mountain Properties</p>
+                <img src="{{asset('images/sponsors/remax-realty-prescott.png')}}" width="103" height="35" alt="Remax Realty Prescott Arizona" style="margin-top:5px;"/>
+            </div>
+            <div style="float:right;width:45%;">
+                <p style="color:#d3d3d3;text-align:right;font-size:0.8em;font-weight:500;margin:17px 20px;line-height:1.2;">
+                    731 W Gurley Street<br/>
+                    Prescott, AZ 86305<br/>
+                    <span style="font-size:1.4em;line-height:1.4em;">(928) 379-3375</span><br/>
+                    <a href="mailto:YourPrescottRealtor@gmail.com?subject=Real%20Estate%20Listing%20on%20www.funoldies.com" target="_blank" style="color:#a6dcff;text-decoration:none;">YourPrescottRealtor@gmail.com</a>
+                </p>
+            </div>
+            <br class="clear"/>
+        </div>
+        <h3 class="cinzel centered">Prescott's Most Beautiful Homes For Sale</h3>
+        <p id="address" class="re-addy centered">
+            {% for entity in entities %}
+        	{{ entity.address }}
+             {% endfor %}
+        </p>
+        <hr style="width:90%;background-color:#29344e;border:0;height:1px;" />
+        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;" target="_blank">
+            <img src="{{asset('images/share-on-facebook.jpg')}}" width="312" height="52" alt="Share on Facebook" style="float:left;margin-left:18px;" />
+        </a>
+        <a href="#" onclick="window.open('https://twitter.com/share?text=A+Dream+Home+in+Prescott+For+Sale','twitter-share-dialog','width=600,height=430');return false;" target="_blank">
+            <img src="{{asset('images/share-on-twitter.jpg')}}" width="312" height="52" alt="Share on Twitter" style="float:right;margin-right:18px;" />
+        </a>
+        <br class="clear"/>
+        <p style="color:white;">
+        {% for entity in entities %}
+            {{ entity.picture }}
+        {% endfor %}
+        </p>
+        
+        <img {% for entity in entities %}{{ 'src' }}="{{entity.picture}}" {% endfor %} width="612" height="407"/>
+        <br/>
+        
+        {#<img src="" width="612" height="407" alt="Prescott Home For Sale" class="centered re-main"/>#}
+        <p style="margin:10px 20px;line-height:1.4;">
+            {% for entity in entities %}
+        	{{ entity.description }}
+            {% endfor %}
+        </p>
+        <br/>
+        <div class="centered">
+            {#<iframe width="600" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode="></iframe>#}
+            <iframe src="http://greatcircleradio.com/map.php" width="600" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <br/>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_realtor') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+        <br class="clear"/><br/>
+    </div>
+{% endblock %}

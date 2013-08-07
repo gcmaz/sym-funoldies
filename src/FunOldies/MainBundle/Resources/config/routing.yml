@@ -82,8 +82,13 @@ fo_weather:
     path: /weather
     defaults: { _controller: FunOldiesMainBundle:Page:weather }
     methods: GET
-  
-fo_test:
-    path: /test
-    defaults: { _controller: FunOldiesMainBundle:Page:test }
+    
+fo_realtor:
+    path: /realtor/{id}
+    defaults: { _controller: FunOldiesMainBundle:Realtor:show, id: 'default' }
     methods: [GET|POST]
+    
+fo_realtor2:
+    path: /prescott-dream-home
+    defaults: { _controller: FunOldiesMainBundle:Realtor:show2 }
+    methods: [GET]
