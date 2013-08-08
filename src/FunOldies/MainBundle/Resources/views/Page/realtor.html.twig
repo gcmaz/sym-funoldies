@@ -38,12 +38,13 @@
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232a3a', endColorstr='#39445e',GradientType=0 ); /* IE6-9 */
         }
         p.re-addy{ color:#a6dcff;font-weight:600;padding:5px; }
-        img.re-main { padding:5px; }
+        .mainimg { padding:5px;margin:auto; }
     </style>
 {% endblock %}
 
 {% block content %}
     <div class="realestate">
+        {#
         <div class="re-hdr">
             <div style="float:left;width:45%;">
                 <img src="{{asset('images/sponsors/don-karcie-remax.jpg')}}" width="67" height="100" alt="Don Karcie Remax Realty Prescott" style="margin:10px 10px 0 30px;float:left;"/>
@@ -61,7 +62,8 @@
             </div>
             <br class="clear"/>
         </div>
-        <h3 class="cinzel centered">Prescott's Most Beautiful Homes For Sale</h3>
+        #}
+        <h3 class="cinzel centered">Dream Home in Prescott</h3>
         <p id="address" class="re-addy centered">
             {% for entity in entities %}
         	{{ entity.address }}
@@ -75,14 +77,40 @@
             <img src="{{asset('images/share-on-twitter.jpg')}}" width="312" height="52" alt="Share on Twitter" style="float:right;margin-right:18px;" />
         </a>
         <br class="clear"/>
+        {#
+        <p>1</p>
         <p style="color:white;">
         {% for entity in entities %}
             {{ entity.picture }}
         {% endfor %}
         </p>
-        
+        <p>2</p>
         <img {% for entity in entities %}{{ 'src' }}="{{entity.picture}}" {% endfor %} width="612" height="407"/>
         <br/>
+        <p>3</p>
+        {% for entity in entities %}
+            {% set path %}
+                {% path entity.picture, 'small' %}
+            {% endset %}
+        <img src="{{ path }}" alt=""/>
+        {% endfor %}
+        <br/>
+        <p>4</p>
+        {% for entity in entities %}
+            {% media entity.picture, 'big' %}
+        {% endfor %}
+        <br/>
+        <p>5</p>
+        {% for entity in entities %}
+            {% if object.providerName is defined and object.providerName == 'sonata.media.provider.image' %}
+                <a href="{{ url }}" target="new">{% media object, 'reference' %}</a>
+            {% endif %}
+        {% endfor %}
+        #}
+
+        <div class="centered mainimg">
+            <img {% for entity in entities %} src="{% path entity.picture, 'big' %}" width="612" height="407" alt="" {% endfor %}/>
+        </div>
         
         {#<img src="" width="612" height="407" alt="Prescott Home For Sale" class="centered re-main"/>#}
         <p style="margin:10px 20px;line-height:1.4;">
@@ -93,7 +121,7 @@
         <br/>
         <div class="centered">
             {#<iframe width="600" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode="></iframe>#}
-            <iframe src="http://greatcircleradio.com/map.php" width="600" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            {#<iframe src="http://greatcircleradio.com/realtor.php" width="600" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>#}
         </div>
         <br/>
         <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_realtor') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
