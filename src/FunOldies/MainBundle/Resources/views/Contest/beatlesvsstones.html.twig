@@ -34,6 +34,7 @@
         form.contactform input[type="submit"] { margin-left: 115px; width: 308px; line-height: 22px; font-size: 16px; min-height: 22px; }
         form.contactform ul li { color: #c00; margin-bottom: 5px; }
         div.notice { float:right;padding:10px;margin:10px;}
+        div.sponsors{ padding-top:20px; }
     </style>
 {% endblock %}
 
@@ -53,6 +54,27 @@
                 in concert at Tim's Toyota Center on August 10th!
             </p>
         </div>
+        <div style="float:right;width:440px;padding-top:20px;">
+            <p class="burgundy cinzel">Thank you for playing!</p>
+            <p style="color:#fff;font-size:1em;">Congratulations to our online WINNERS!</p>
+            <p style="width:150px;text-align:left;float:left;margin-left:80px;">
+                Lisa W.<br/>
+                David C.<br/>
+                Mary W.<br/>
+                Donald F.<br/>
+                Jeri P.<br/>
+            </p>
+            <p style="width:200px;text-align:left;float:right;">
+                Gary L.<br/>
+                Syl W.<br/>
+                John T.<br/>
+                Elaine R.<br/>
+                Annie K.<br/>
+            </p>
+            <br class="clear"/>
+        </div>
+        <br class="clear"/>
+        {#
         {% for flashMessage in app.session.flashbag.get('bvssnotice') %}
             <div class="notice">
                 {{ flashMessage }}
@@ -74,8 +96,8 @@
 
             <input type="submit" value="Submit" />
         </form>
-        
-        <div class="sponsors">
+        #}
+        <div class="clear sponsors">
             <a href="http://www.timstoyotacenter.com/events/details/172-Beatles-Stones" target="_blank"><img src="{{ asset('images/sponsors/tims-toyota-bar.jpg')}}" width="500" height="66" alt="Kingsmen and Surfaris at Tim's Toyota Center" /></a>
         </div>
         <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'beatles-vs-stones'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>

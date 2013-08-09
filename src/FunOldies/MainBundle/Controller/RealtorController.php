@@ -22,7 +22,7 @@ class RealtorController extends Controller
         }
         return  $entities;
     }
-
+    
     public function showAction()
     { 
         $entities = $this->getRealtorRepository()->getListing();
