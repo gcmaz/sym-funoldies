@@ -1,7 +1,11 @@
 parameters:
 #    fun_oldies_main.example.class: FunOldies\MainBundle\Example
+#    fo.controller.pet.class: FunOldies\MainBundle\Controller\PetController
 
 services:
 #    fun_oldies_main.example:
 #        class: %fun_oldies_main.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+#    fo.pet.controller:
+#        class: "%fo.controller.pet.class%"
+        

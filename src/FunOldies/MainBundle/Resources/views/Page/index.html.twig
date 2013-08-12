@@ -27,8 +27,8 @@
     <div class="mainbox_box">
         <div class="slider_wrapper theme_default">
             <div id="slider" class="nivoSlider">
-                <a href="{{path('fo_contest', {'contest':'beatles-vs-stones'})}}"><img src="{{ asset('images/660x250/beatles-vs-stones.jpg') }}" width="660" height="250" alt="Beatles vs Stones in Concert"></a>
-                {#<img src="{{ asset('images/660x250/default-1.jpg') }}" width="660" height="250" alt="Oldies Radio - Prescott Arizona - Magic 99.1">#}
+                {#<a href="{{path('fo_contest', {'contest':'beatles-vs-stones'})}}"><img src="{{ asset('images/660x250/beatles-vs-stones.jpg') }}" width="660" height="250" alt="Beatles vs Stones in Concert"></a>#}
+                <img src="{{ asset('images/660x250/default-1.jpg') }}" width="660" height="250" alt="Oldies Radio - Prescott Arizona - Magic 99.1">
                 <img src="{{ asset('images/660x250/default-fab-4.jpg') }}" width="660" height="250" alt="Oldies Radio - Prescott Arizona - Magic 99.1">
             </div>
         </div>
@@ -49,24 +49,17 @@
         </div>
         <p style="clear:both;float:left;color:#74bba9;font-size:10px;font-weight:700;margin-left:25px;">Instagram Photos</p>
         <p style="float:right;color:#74bba9;font-size:10px;font-weight:700;margin-right:25px;">Instagram Photos</p>
-        {#
-        <br class="clear"/><br/>
-            <div style="clear:both;width:100%;height:100px;display:block;">
-            <!-- twitter feed -->
-            <div id="ticker" class="query"></div>
-        </div>
-        #}
         <br class="clear"/><br/>
         <div class="box_320x150 box_left dropshadow">
             <a href="{{path('fo_contest', {'contest':'queen-of-caffeine'})}}">
                 <img src="{{ asset('images/320x150/queen-of-caffeine.jpg') }}" width="320" height="150" alt="Queen of Caffeine"/>
             </a>
         </div>
-        <div class="box_320x150 box_right dropshadow">
-            <a href="{{ path('fo_pet')}}" >
-                <img src="{{ asset('images/pet320x150.jpg') }}" width="320" height="150" alt="Pet Of The Week"/>
-            </a>
-        </div>
+        <a href="{{ path('fo_pet')}}">
+            <div class="box_320x150 box_right dropshadow pet">
+                <img {% for entity in entities %} src="{% path entity.picture, 'small' %}" width="150" height="150" alt="{{ entity.name }}" border="0" align="right" {% endfor %}/>
+            </div>
+        </a>
         <br class="clear"/>
     </div>
 {% endblock %}

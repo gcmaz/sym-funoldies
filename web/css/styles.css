@@ -253,6 +253,8 @@ div.notice {
     background:#151515;
     margin:0;
     padding:0;
+    overflow:hidden;
+    border:1px solid white;
 }
 .box_left{
     float:left;
@@ -266,6 +268,10 @@ div.notice {
     display:block;
     z-index: 1000;
     overflow: visible !important;
+}
+.pet{
+    background-image: url('../images/320x150/pet-bg.jpg') ;
+    text-align: right;
 }
 /********** START MENU **************/
 .menu_box{}

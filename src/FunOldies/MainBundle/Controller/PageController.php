@@ -10,6 +10,12 @@ class PageController extends Controller
 {
     public function indexAction()
     {
+        //get pet of the week
+        $entities = $this->getPetRepository()->getPet();
+        if(!$entities){
+            throw $this->createNotFoundException('Unable to find data');
+        }
+        
         // snapwidget.com hashtags
         // ---- random local 
         $a = array(
@@ -34,6 +40,7 @@ class PageController extends Controller
         $display_blockB = $b[$randB];
 
         return $this->render('FunOldiesMainBundle:Page:index.html.twig', array(
+            'entities' => $entities,
             'display_blockA' => $display_blockA,
             'display_blockB' => $display_blockB
         ));
@@ -131,11 +138,6 @@ class PageController extends Controller
         return $this->render('FunOldiesMainBundle:Page:whats.html.twig');
     }
     
-    public function petAction()
-    {
-        return $this->render('FunOldiesMainBundle:Page:pet.html.twig');
-    }
-    
     public function jobsAction()
     {
         return $this->render('FunOldiesMainBundle:Page:jobs.html.twig');
@@ -144,6 +146,27 @@ class PageController extends Controller
     public function weatherAction()
     {
         return $this->render('FunOldiesMainBundle:Page:weather.html.twig');
+    }
+    
+    public function petAction()
+    { 
+        $entities = $this->getPetRepository()->getPet();
+
+        if(!$entities){
+            throw $this->createNotFoundException('Unable to find data');
+        }
+        
+        return $this->render('FunOldiesMainBundle:Page:pet.html.twig', array(
+            'entities' => $entities,
+        ));
+    } 
+    private function getPetRepository() {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('FunOldiesMainBundle:Pet');
+        if(!$entities){
+            throw $this->createNotFoundException('Unable to gather data');
+        }
+        return  $entities;
     }
     
 }
