@@ -39,6 +39,14 @@ assetic:
         #yui_css:
         #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
 
+# Swiftmailer Configuration
+swiftmailer:
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    spool:     { type: memory }
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -63,14 +71,6 @@ doctrine:
                 mappings:
                     SonataMediaBundle: ~
                     ApplicationSonataMediaBundle: ~
-
-# Swiftmailer Configuration
-swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
 
 sonata_media:
     # if you don't use default namespace configuration
