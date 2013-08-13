@@ -70,7 +70,7 @@ fo_splash:
 
 fo_pet:
     path: /prescott/pet-of-the-week
-    defaults: { _controller: FunOldiesMainBundle:Page:Pet }
+    defaults: { _controller: FunOldiesMainBundle:Pet:Show }
     methods: [GET]
     
 fo_jobs:
