@@ -145,6 +145,7 @@ a img { border:0; }
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc342', endColorstr='#bd3a00',GradientType=0 ); /* IE6-8 */
 }
 .feedme{display:none;visibility:hidden;}
+strong { font-weight:700; }
 .loud{
 	line-height:1.5;
 	background-color:#fff;
@@ -269,7 +270,7 @@ div.notice {
     z-index: 1000;
     overflow: visible !important;
 }
-.pet{
+.pet-banner{
     background-image: url('../images/320x150/pet-bg.jpg') ;
     text-align: right;
 }

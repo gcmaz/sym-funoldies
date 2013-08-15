@@ -26,6 +26,7 @@
         .petwrapper{text-align:left;margin:0 auto;background-color:#fff;width:670px;}
         .pethdr{background-image: url('{{asset("images/pet-of-week-logo.jpg")}}');width:670px;height:141px;text-align:right;}
         .pets{width:670px;padding:5px;color:#663300;}
+        div.pets p {text-align:left; font-size:0.9em; margin-left:5px; line-height:1.5 }
     </style>
 {% endblock %}
     
@@ -37,12 +38,9 @@
     </div>
     <div class="pets">
             <p style="text-align:left;font-size:14px;margin-left:5px;line-height:1.5;">
-                {#<img src="{{asset('images/pet-of-week_main.jpg')}}" width="257" height="233" alt="Pet Of The Week" align="right" border="0" style="margin:2px 20px;" />
-                    Easily calm and composed with a bit of a formal demeanor, <span style="font-weight:700;">SPARKY</span> loosens up some after spending time together and you'll find him to be a beautiful walker on the leash for relaxing outings. This mature, mellowed character requires a secure arrangement when left alone for brief periods, especially as he builds an allegiant connection to his lifelong home and family. Freshly beautifully groomed Sparky weighs 60 lbs and his adoption includes: neuter, microchip ID, initial vaccines, one month pet insurance, a complimentary veterinarian exam and post adoption support! He qualifies for our 100% discounted, Senior for Senior program when his adopter is 59 or older!
-                #}
                 {% for entity in entities %}
                     <img src="{% path entity.picture, 'big' %}" alt="{{ entity.name }}" width="250" height="250" align="right" border="0" style="margin:2px 20px;" />
-                    {{ entity.description }}
+                    {{ entity.description|raw }}
                 {% endfor %}
             </p>
             <br style="clear:both;" /><br/>

@@ -81,17 +81,24 @@ sonata_media:
     default_context: default
     db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
-        default:  # the default context is mandatory
+        #the default context is mandatory
+        default:  
             providers:
-                - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
                 - sonata.media.provider.image
                 - sonata.media.provider.file
-                
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-
+                
+        #pet listings - dream home        
+        pet:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.youtube
+            formats:
+                small: { width: 150 , quality: 70}
+                big:   { width: 250 , quality: 70}
     cdn:
         server:
             path: http://www.gcmaz.com/uploads/media

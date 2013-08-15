@@ -56,7 +56,7 @@
             </a>
         </div>
         <a href="{{ path('fo_pet')}}">
-            <div class="box_320x150 box_right dropshadow pet">
+            <div class="box_320x150 box_right dropshadow pet-banner">
                 <img {% for entity in entities %} src="{% path entity.picture, 'small' %}" width="150" height="150" alt="{{ entity.name }}" border="0" align="right" {% endfor %}/>
             </div>
         </a>
