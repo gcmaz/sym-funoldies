@@ -1,0 +1,54 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Teacher's Appreciation Night - Prescott, AZ - Presented by Prescott College
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Every year, Prescott honors it's teachers by hosting a Teacher's Appreciation Night.  Presented by Prescott College and held at Hassayamp Inn on Sept. 27, 2013."/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />   
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/teachers-appreciation-night-2013.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash':'teachers-appreciation-night'}) }}"/>
+    <meta property="og:title" content="Teacher's Appreciation Night - Prescott, AZ - Presented by Prescott College"/> 
+    <meta property="og:description" content="Every year, Prescott honors it's teachers by hosting a Teacher's Appreciation Night.  Presented by Prescott College and held at Hassayamp Inn on Sept. 27, 2013."/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="teachers appreciation night, Prescott, teachers night"/>
+{% endblock %}
+    
+{% block content %}
+    <div class="splash" style="background-color:#fff;">
+        <img src="{{asset('images/660x250/teachers-appreciation-night-2013.jpg')}}" width="660" height="250" alt="Teachers Appreciation Night 2013" style="padding-top:5px;"/>
+        <p style="font-size:1em;font-weight:600;padding:0 20px 10px;color:#000;line-height:1.5;" class="arial">
+            Present this invitation for FREE admission to Teachers Appreciation Night
+            <br/>at the Hassayampa Inn in Prescott, AZ, September 27th, 2013 from 6 - 9pm
+        </p>
+        <p>
+            <a href="" target="_blank" style="text-align:center;font-size:1.4em;" class="cinzel blue">Download and Print Your Invitation &raquo;</a>
+        </p>
+        <div class="sponsors">
+            <p style="font-size:11px;font-weight:bold;color:#666;padding:5px;margin-top:10px;">Brought To You By:</p>
+            <ul style="float:left;list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://hotyogaprescott.com/" target="_blank"><img src="{{asset('images/sponsors/bend-hot-yoga.jpg')}}" width="175" height="auto" /></a></li>
+                <li><a href="http://www.nazveincenter.com/" target="_blank"><img src="{{asset('images/sponsors/naz-vein-center.jpg')}}" width="180" height="auto" /></a></li>
+                <li><a href="http://www.bandlflooringamerica.com/" target="_blank"><img src="{{asset('images/sponsors/bl-flooring.jpg')}}" width="180" height="auto" /></a></li>
+            </ul>
+            <ul style="float:right;list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://www.anytimefitness.com/" target="_blank"><img src="{{asset('images/sponsors/anytime-fitness.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.sunvalleytireaz.com/" target="_blank"><img src="{{asset('images/sponsors/sun-valley-tire-and-auto.jpg')}}" width="159" height="auto" /></a></li>
+            </ul>
+             <ul style="list-style-type:none;margin:auto;padding:0;">
+                <li><a href="http://www.prescott.edu/" target="_blank"><img src="{{asset('images/sponsors/prescott-college.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.lambautocenters.com/" target="_blank"><img src="{{asset('images/sponsors/lamb-nissan-chevrolet.jpg')}}" width="200" height="auto" /></a></li>
+                <li><a href="http://www.blimpie.com/" target="_blank"><img src="{{asset('images/sponsors/blimpie.jpg')}}" width="200" height="auto" /></a></li>
+            </ul>
+            <br class="clear" />
+        </div>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash':'teachers-appreciation-night'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+        <br class="clear"/>
+    </div>
+{% endblock %}
