@@ -1,21 +1,90 @@
 {% extends 'FunOldiesMainBundle::layout.html.twig' %}
 
 {% block title %}
-    Jobs - Prescott Radio Station - Fun Oldies
+    Current Job Openings - Prescott Radio Station - Fun Oldies
 {% endblock %}
 
 {% block description %}
-    <meta name="description" content="Jobs - Prescott Radio Station - Fun Oldies"/>
+    <meta name="description" content="Great Circle Media Employment. Current Job Openings - Prescott Radio Station - Fun Oldies"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />   
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/logo-oldies.png') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_jobs') }}"/>
+    <meta property="og:title" content="Current Job Openings - Prescott Radio Station - Fun Oldies"/> 
+    <meta property="og:description" content="Great Circle Media Employment. Current Job Openings - Prescott Radio Station - Fun Oldies"/>
 {% endblock %}
 
 {% block keywords %}
-    <meta name="keywords" content="jobs, Prescott radio station"/>
+    <meta name="keywords" content="jobs, employment, job openings, Prescott radio station"/>
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+            div.jobs p {margin:5px auto;padding:5px 0;}
+            .addy {font-weight: 700;font-size:1.2em;line-height:1;}
+    </style>
 {% endblock %}
     
 {% block content %}
     <h2 class="cinzel">
         Employment Opportunities
     </h2>
+    <div class="jobs">
+        <p style="font-weight:700;font-size:16px;">SALES SERVICE COORDINATOR - Flagstaff, AZ</p>
+        <hr/>
+        <p>Great Circle Media is looking for our next great Sales Service Coordinator.  This position works out of the Flagstaff office for Great Circle Media.</p>
+        <p>The Sales Service Coordinator will be responsible assisting with all internal and external processes for new account development and existing client relationship services including but not limited to: inputting sales orders; prepare, edit, proofread sales presentations and memos and letters; coordinating with production; general administrative duties; serve as a backup to the traffic director; relieving front desk assistant when necessary.  This individual will be involved in all aspects of sales in accordance with the Sales Department’s objectives and goals.  The Sales Service Coordinator will have excellent oral, written, presentation and interpersonal skills; A sound understanding of Microsoft Office programs and the ability to learn other computer programs and the proven ability to handle a high paced, stressful position.</p>
+         <p>
+             <span style="text-decoration:underline;font-weight:600;">For those interested</span> please send a resume, cover letter and salary requirements to:
+         </p>
+         <p class="addy">
+            Human Resources
+            <br/>1117 W. Route 66
+            <br/>Flagstaff, AZ 86001
+        </p>
+        <p>
+            Or email it to: <a href="mailto:employment@kaff.com?subject=Employment%20Application%3A%20Sales%20Service%20Coordinator">employment@kaff.com</a>
+        </p>
+        <p>Posted 9/9/13 to 12/9/13 - Until Filled</p>
+        <div class="addthis_toolbox addthis_default_style ">
+            <a id="job-ssc" class="addthis_counter addthis_pill_style"></a>
+        </div>
+    </div>
+    <div class="jobs">
+        <p style="font-weight:700;font-size:16px;">ACCOUNT EXECUTIVES - Flagstaff and Prescott, AZ</p>
+        <p>Great Circle Media - Prescott, AZ is searching for Account Executives who understand that solving clients' needs and providing top notch customer service is key when developing relationships and generating business. As an AE with GCR, you must be able to develop integrated programs that will deliver results to new and existing clients, be detail oriented, and believe that radio is the best bet for small market businesses.</p>
+        <p>If you can meet our expectations and can excel in a fun, fast paced environment while working just a hard &amp; smart, please email your resume to <a href="mailto:employment@kaff.com?subject=Account_Execs_Prescott">employment@kaff.com</a> ASAP.</p>
+        <p>Posted 5/26/11 - Until Filled</p>
+        <div class="addthis_toolbox addthis_default_style ">
+            <a id="job-ae" class="addthis_counter addthis_pill_style"></a>
+        </div>
+    </div>
+    <div class="jobs">
+        <p style="font-weight:700;font-size:16px;">MARKETING MANAGER - Flagstaff and Prescott, AZ</p>
+        <p>Have you ever wanted to work in the exciting fast-paced world of radio? We are accepting applications and resumes for a Sales Marketing Manager with proven sales skills and an understanding of advertising and marketing. The ideal applicant is energetic and self-driven. College degree preferred. If you fit the criteria and desire a salary plus a generous commission structure, email your resume to <a href="mailto:employment@kaff.com?subject=Marketing%20Manager">employment@kaff.com</a>.</p>
+        <p>Posted 4/1/11 - Until Filled</p>
+        <div class="addthis_toolbox addthis_default_style ">
+            <a id="job-mm" class="addthis_counter addthis_pill_style"></a>
+        </div>
+    </div>
+{% endblock %}
+    
+{% block js_btm %}
+    {{ parent() }}
+    <!-- AddThis Button BEGIN -->
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-522f81c761e7db91"></script>
+    <script type="text/javascript">
+        addthis.button('#job-ssc', {}, {url: "http://funoldies.gcmaz.com/jobs", title: "Sales Service Coordinator Position", description: "Great Circle Media has a job opportunity that might interest you." });
+        addthis.button('#job-ae', {}, {url: "http://funoldies.gcmaz.com/jobs", title: "Account Executive Position", description: "Great Circle Media has a job opportunity that might interest you." });
+        addthis.button('#job-mm', {}, {url: "http://funoldies.gcmaz.com/jobs", title: "Marketing Manager Position", description: "Great Circle Media has a job opportunity that might interest you." });
+    </script>
+    <!-- AddThis Button END -->
+{% endblock %}
+    
     {#
     <div class="jobs">
         <p style="font-weight:700;font-size:1.4em;letter-spacing:0;">Production / Imaging Director<a href="http://www.gcmaz.com/jobs/Production-Imaging-Director.doc" target="_blank" style="float:right;font-size:11px;color:#000;text-decoration: none;">Download Job Description &raquo;</a></p>
@@ -67,15 +136,3 @@
         <p><span style="text-decoration:underline;font-weight:600;">Posted</span>: June 10, 2013 | Closing: Sept 10, 2013 or until filled</p>
     </div>
     #}
-    <div class="jobs">
-        <p style="font-weight:700;font-size:16px;">ACCOUNT EXECUTIVES - Flagstaff and Prescott, AZ</p>
-        <p>Great Circle Radio - Prescott, AZ is searching for Account Executives who understand that solving clients' needs and providing top notch customer service is key when developing relationships and generating business. As an AE with GCR, you must be able to develop integrated programs that will deliver results to new and existing clients, be detail oriented, and believe that radio is the best bet for small market businesses.</p>
-        <p>If you can meet our expectations and can excel in a fun, fast paced environment while working just a hard &amp; smart, please email your resume to <a href="mailto:employment@kaff.com?subject=Account_Execs_Prescott">employment@kaff.com</a> ASAP.</p>
-        <p>Posted 5/26/11 - Until Filled</p>
-    </div>
-    <div class="jobs">
-        <p style="font-weight:700;font-size:16px;">MARKETING MANAGER - Flagstaff and Prescott, AZ</p>
-        <p>Have you ever wanted to work in the exciting fast-paced world of radio? We are accepting applications and resumes for a Sales Marketing Manager with proven sales skills and an understanding of advertising and marketing. The ideal applicant is energetic and self-driven. College degree preferred. If you fit the criteria and desire a salary plus a generous commission structure, email your resume to <a href="mailto:employment@kaff.com?subject=Marketing%20Manager">employment@kaff.com</a>.</p>
-        <p>Posted 4/1/11 - Until Filled</p>
-    </div>
-{% endblock %}
