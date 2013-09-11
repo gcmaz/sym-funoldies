@@ -28,10 +28,10 @@
         form.contactform label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
         form.contactform input[type="text"],
         form.contactform input[type="email"]
-            { width: 300px; line-height: 22px; font-size: 16px; min-height: 22px; }
-        form.contactform select { width:300px; line-height: 22px; font-size: 16px; min-height: 22px; }
-        form.contactform textarea { width: 300px; height: 150px; line-height: 22px; font-size: 16px; }
-        form.contactform input[type="submit"] { margin-left: 115px; width: 308px; line-height: 22px; font-size: 16px; min-height: 22px; }
+            { width: 270px; line-height: 22px; font-size: 16px; min-height: 22px; }
+        form.contactform select { width:270px; line-height: 22px; font-size: 16px; min-height: 22px; }
+        form.contactform textarea { width: 270px; height: 150px; line-height: 22px; font-size: 16px; }
+        form.contactform input[type="submit"] { margin-left: 115px; width: 278px; line-height: 22px; font-size: 16px; min-height: 22px; }
         form.contactform ul li { color: #c00; margin-bottom: 5px; }
         div.notice { float:right;padding:10px;margin:10px;}
     </style>
@@ -41,15 +41,19 @@
     <div class="contest" style="background-color:#251810;">
         <img src="{{asset('images/660x250/queen-of-caffeine.jpg')}}" width="660" height="250" alt="Win Free Coffee For Your Office - Queen of Caffeine" usemap="#propane" />
         <p style="font-size:0.8em;font-weight:700;padding:0 20px 10px;color:#ccaa95;line-height:1.5;">
-            It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and sweets from Gurley Street Coffee.
+            It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and sweets from Wild Iris Coffee House.
         </p>
-        <p style="float:left;width:175px;font-size:0.7em;color:#ccaa95;padding:25px 0 0 10px;">
-            <a href="http://www.facebook.com/gurleystcoffee" target="_blank" style="display:block;">
-                <img src="{{asset('images/sponsors/gurley-st-coffee.png')}}" width="105" height="65" alt="Gurley St. Coffee" border="0" />
+        <p style="float:left;width:220px;font-size:0.7em;color:#ccaa95;padding:25px 0 0 10px;">
+            <a href="http://wildiriscoffee.com/" target="_blank" style="display:block;">
+                <img src="{{asset('images/sponsors/wild-iris.png')}}" width="209" height="68" alt="Wild Iris Coffee House" border="0" />
             </a>
-            <br />
-            Stop by Gurley Street Coffee for all your breakfast, lunch and coffee needs! Sweet treats that put a smile on your face and a hop in your step. Gurley Street Coffee also serves amazing teas, smoothies and Italian sodas!
-            <br/><br/><span style="color:#fff;">318 W Gurley St<br/>Prescott, AZ 86001</span>
+            <br/>
+            <span style="color:#fff;">124 South Granite St, Ste E<br/>Prescott, AZ<br/>928-778-5155</span>
+            <br/>
+            We are about Coffee, Comfort, and Community.<br/>
+            <span style="font-weight:400;">Overlooking beautiful Granite Creek, the Wild Iris Coffeehouse is locally owned and operated in Downtown Prescott, Arizona since 2007 just one block off the Historic Prescott Square and its famous Whiskey Row. We are Prescott’s picturesque coffeehouse serving fantastic coffee, espresso and tea.
+            We offer amazing coffee and loose leaf tea, scrumptious made from scratch pastries, desserts, light lunch fare and more baked right on the premises! You can enjoy all of this inside our warm and cozy historic building or you outside in our secluded courtyard surrounded by mature trees and listen to the delightful sounds of Granite Creek.
+            </span>
         </p>
         {% for flashMessage in app.session.flashbag.get('caffeinenotice') %}
             <div class="notice">
