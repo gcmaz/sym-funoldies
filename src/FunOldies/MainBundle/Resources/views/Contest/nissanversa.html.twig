@@ -1,0 +1,60 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Like Your Way To A Free Car!  Radio Contest on Fun Oldies 100.9 / 1450am
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Like Your Way To A Free Car - Win a 2014 Nissan Versa Note!  Northern Arizona Radio Contest on Fun Oldies 100.9 / 1450am"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/nissan-versa-giveaway.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'win-a-nissan-versa-note'}) }}"/>
+    <meta property="og:title" content="Like Your Way To A Free Car!  Radio Contest on Fun Oldies 100.9 / 1450am"/> 
+    <meta property="og:description" content="Like Your Way To A Free Car- Win a 2014 Nissan Versa Note!  Northern Arizona Radio Contest on Fun Oldies 100.9 / 1450am"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="radio, contest, win a car, Flagstaff, Prescott"/>
+{% endblock %}
+
+{% block content %}
+    <div class="arial centered contest">
+        <img src="{{ asset('images/660x250/nissan-versa-giveaway.jpg') }}" width="660" height="250" alt="Like Your Way To A Free Car!" style="border:1px solid white;" />
+        <p style="font-weight:600;font-size:1em;width:90%;">
+            <span class="burgundy">"Like" Your Way To A Free Car</span> presented by <a href="http://theflooringshack.com" target="_blank" style="color:#000;text-decoration:none;">Chris'n Nate's Flooring Shack</a>.  The more the <span class="blue">"Likes"</span> the more chances you have to win!
+        </p>
+        <p style="font-size:1em;margin:auto;float:left;width:45%;">
+            "Like" the following sponsors pages and fill out the form on each page and you'll be registered for the <span style="font-weight:600;">2014 Nissan Versa Note</span> giveaway.  With each "Like" you will increase your chances of winning.
+        </p>
+        <p style="float:right;width:45%;font-size:0.9em;">
+            <img src="{{asset('images/sponsors/chris-n-nates.jpg')}}" width="100" height="auto" alt="" border="0" />
+        </p>
+        <p class="clear" style="font-size:1.2em;font-weight:600;width:70%;color:#2a4f9d;">
+            We'll announce a qualifier each weekday beginning on Monday Oct 7th
+        </p>
+        <p style="font-weight:600;font-size:1.2em;width:90%;">
+            We will give away the 2014 Nissan Versa Note at <a href="http://theflooringshack.com" target="_blank" style="color:#000;text-decoration:none;">Chris'n Nate's Flooring Shack</a> on Friday 12/6
+        </p>
+        <div class="centered sponsors">
+            <p style="font-size:0.8em;font-weight:bold;color:#666;padding:3px;margin-top:10px;background-color:#eaeaea;">Sponsors (Note: Not all sponsors are participating in the Facebook Entry)</p>
+            <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://theflooringshack.com" target="_blank"><img src="{{asset('images/sponsors/chris-n-nates.jpg')}}" width="130" height="auto" /></a></li>
+            </ul>
+            <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://a.pgtb.me/trPqL2" target="_blank"><img src="{{asset('images/sponsors/1009oldies.jpg')}}" width="130" height="auto" /></a></li>
+            </ul>
+             <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://a.pgtb.me/vXXsgc" target="_blank"><img src="{{asset('images/sponsors/991magic.jpg')}}" width="140" height="auto" /></a></li>
+            </ul>
+            <br class="clear" />
+        </div>
+        <p><a href="#" target="_blank" style="text-decoration:none;color:#666;font-size:10px;">Official Rules</a></p>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest':'win-a-nissan-versa-note'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+    <map id="nates" name="nates">
+        <area shape="rect" coords="0,120,164,250" target="_blank" href="http://theflooringshack.com" />
+    </map>
+{% endblock %}

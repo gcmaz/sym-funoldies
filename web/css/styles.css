@@ -129,9 +129,7 @@ a img { border:0; }
 	-webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .5);
 	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .5);
 }
-.textshadow{
-	text-shadow:1px 1px 1px rgba(0,0,0,.2);
-}
+
 .grad-or{
     background: #ffc342; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -145,14 +143,6 @@ a img { border:0; }
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc342', endColorstr='#bd3a00',GradientType=0 ); /* IE6-8 */
 }
 .feedme{display:none;visibility:hidden;}
-strong { font-weight:700; }
-.loud{
-	line-height:1.5;
-	background-color:#fff;
-	border:1px solid #F60;
-	font-weight:bold;
-	padding:10px;
-}
 div.notice {
     width:60%;
     margin:auto;
@@ -162,25 +152,31 @@ div.notice {
     padding:15px;
     font-weight:bold;
 }
-.unica{
-    font-family: 'Unica One', cursive;
-    text-transform:uppercase;
+
+/********* FONTS *************/
+
+    /* menu */
+.unica{font-family: 'Unica One', cursive;text-transform:uppercase;}
+.cinzel{font-family: 'Cinzel', Arial, sans-serif;}
+.arial{font-family: Arial, sans-serif;}
+
+.blue{color:#2a4f9d;}
+.orange{color:#ff6600;}
+.burgundy{color:#600;}
+
+.textshadow{text-shadow:1px 1px 1px rgba(0,0,0,.2);}
+
+strong { font-weight:700; }
+.loud{
+	line-height:1.5;
+	background-color:#fff;
+	border:1px solid #F60;
+	font-weight:bold;
+	padding:10px;
 }
-.cinzel{
-    font-family: 'Cinzel', Arial, sans-serif;
-}
-.arial{
-    font-family: Arial, sans-serif;
-}
-.blue{
-    color:#003399;
-}
-.orange{
-    color:#ff6600;
-}
-.burgundy{
-  color:#600;
-}
+
+/****************************/
+
 .logo_box{}
 .sponsor_box{
     margin: -10px auto 10px;
@@ -515,14 +511,15 @@ div.dbl-row p:first-child + p{
 .contest{
     background-color:#fff;
     margin:auto;
-    width:660px;
+    width:662px;
 }
 .contest p{
-    font-weight:700;
-    line-height:1.4;
-    font-size:1.1em;
+    font-weight:500;
+    line-height:1.2;
+    font-size:1em;
     width:95%;
     margin:auto;
+    padding:10px;
 }
 .sponsors{
     margin:5px auto;

@@ -51,6 +51,13 @@ class ContestController extends Controller
                     'form' => $form->createView()
                 ));
                 
+                
+            // 2013 NISSAN VERSA NOTE
+            case 'win-a-nissan-versa-note' :  
+                return $this->render('FunOldiesMainBundle:Contest:nissanversa.html.twig', array(
+                    'contest' => $contest
+                ));
+                
             // **** BEATLES VS STONES ****
             case 'beatles-vs-stones' :
                 $data = new GenContest ();
