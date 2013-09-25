@@ -19,6 +19,15 @@
 {% block keywords %}
     <meta name="keywords" content="radio, contest, win a car, Flagstaff, Prescott"/>
 {% endblock %}
+    
+{% block styles %}
+    {{ parent() }}
+    <style type="text/css">
+    .fb_edge_comment_widget {
+        margin-top: -100px !important;
+    }
+    </style>
+{% endblock %}
 
 {% block content %}
     <div class="arial centered contest">
@@ -54,7 +63,8 @@
             <br class="clear" />
         </div>
         <p><a href="#" target="_blank" style="text-decoration:none;color:#666;font-size:10px;">Official Rules</a></p>
-        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest':'win-a-nissan-versa-note'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest':'win-a-nissan-versa-note'}) }}" data-send="true" data-width="660" data-show-faces="true" data-font="arial" style="overflow:visible !important;"></div>
+        <br class="clear"/><br style="line-height:100px;"/>
     </div>
     <map id="nates" name="nates">
         <area shape="rect" coords="0,120,164,250" target="_blank" href="http://theflooringshack.com" />
