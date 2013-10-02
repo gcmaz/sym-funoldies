@@ -19,19 +19,6 @@
 {% block keywords %}
     <meta name="keywords" content="oldies, concerts, Prescott, Prescott Valley, Northern Arizona"/>
 {% endblock %}
-    
-{% block styles %}
-    {{ parent() }}
-    <style type="text/css">
-        .spacer{clear:both;background-color:#485879; width: 90%; height: 5px;margin:10px auto 5px;}
-        div.concerts {width:90%;margin:10px auto;color:#21656d;line-height:1.2;font-size:1em;font-weight:400;text-align:left;font-family: arial, sans-serif;background-color:rgba(89,221,226,0.5);padding:3px 10px;border:1px solid #70b190; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
-        .concert-title{font-weight:600;color:#fff;margin:3px 0 8px 0;text-shadow: 1px 1px 2px rgba(0,0,0,0.35); font-size:1em;}
-        .concert-date{float:right;color:#f6fffb;font-weight:600;text-shadow: 1px 1px 2px rgba(0,0,0,0.35);margin:0 15px 0 0;font-size:1em;}
-        .concert-img {float:right;margin:4px 10px;border:1px solid #ceffe6;}
-        .concerts a{font-weight:bold;color:#f6fffb;text-decoration:none;padding-top:5px;display:block;} {# generic links #}
-        a.moreinfo-link {clear:both;float:right;font-size:0.9em;font-weight:700;color:#21656d;text-decoration:none;padding-top:5px;margin:5px auto;text-shadow: 0px 0px 3px rgba(255,255,255,0.35);letter-spacing: -1px;vertical-align:bottom;} {# the more info link#}
-    </style>
-{% endblock %}
 
 {% block leftcol_ad %}
     <a href="http://arizonasundogs.com/" target="_blank">
@@ -48,25 +35,7 @@
         <p><a href="http://pepsiamp.com/?p=920" target="_blank">Pepsi Amphitheater (Flagstaff) &raquo;</a></p>
     </div>#}
     <h2 class="cinzel">Concerts</h2>
-    
-    {% if entities == '' %}
-        <div class="concerts">
-            <p class="concert-title">Sorry, no concert listings to display</p>
-        </div>
-    {% else %}
-        {% for entity in entities %}
-            <div class="concerts">
-                <p class="concert-title">{{ entity.title|raw }} <span class="concert-date">{% if entity.concertDate != null %}{{entity.concertDate|date("M jS") }}{% endif %}</span></p>
-                <img src="{% path entity.picture, 'small' %}" alt="{{ entity.title }}" width="150" height="auto" class="concert-img"/>
-                {{ entity.content|raw }}
-                <br class="clear"/>
-                {% if entity.link != null %}<a href="{{ entity.link|raw }}" target="_blank" class="moreinfo-link unica">MORE INFO &raquo;</a>{% endif %}
-                <br class="clear" />
-            </div>
-        {% endfor %}
-    {% endif %}
-    
-    <br class="clear" />
+    <iframe src="http://www.magic991.com/concerts2-knot.php" width="660" height="600"></iframe>
+    <br/>
     <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_concerts') }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
-    <br class="clear"/>
 {% endblock %}

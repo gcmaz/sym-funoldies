@@ -23,14 +23,14 @@ fo_photos:
     defaults: { _controller: FunOldiesMainBundle:Page:photos }
     methods: [GET|POST]
     
-fo_concerts:
+fo_concerts_old:
     path: /concerts/prescott/arizona
     defaults: { _controller: FunOldiesMainBundle:Page:concerts }
     methods: GET
   
-fo_concerts2:
+fo_concerts:
     path: /concerts
-    defaults: { _controller: FunOldiesMainBundle:Page:concerts }
+    defaults: { _controller: FunOldiesMainBundle:Concert:show }
     methods: GET
 
 fo_community:

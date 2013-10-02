@@ -99,6 +99,14 @@ sonata_media:
             formats:
                 small: { width: 150 , quality: 70}
                 big:   { width: 250 , quality: 70}
+                
+        #concert listings
+        concerts:  
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 150 , quality: 70}
+                
     cdn:
         server:
             path: http://www.gcmaz.com/uploads/media
