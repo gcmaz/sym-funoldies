@@ -1,0 +1,50 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Give the Gift of Warmth this Season - Northern Arizona Coat Drive - Help Us Reach Our Goal of 3,000 Coats! Fun Oldies Radio
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Help Us Reach Our Goal of 3,000 Coats this November in the Northern Arizona Coat Drive. Give the Gift of Warmth!"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/splash/gift-of-warmth.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash':'gift-of-warmth-coat-drive'}) }}"/>
+    <meta property="og:title" content="Give the Gift of Warmth this Season - Northern Arizona Coat Drive - Help Us Reach Our Goal of 3,000 Coats!"/> 
+    <meta property="og:description" content="Help Us Reach Our Goal of 3,000 Coats this November in the Northern Arizona Coat Drive. Give the Gift of Warmth!"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="coat drive, gift of warmth, Northern Arizona"/>
+{% endblock %}
+
+{% block content %}
+    <div class="splash" style="background-color:#fff;">
+        <img src="{{asset('images/splash/gift-of-warmth.jpg')}}" width="660" height="454" alt="The Gift of Warmth Coat Drive" style="padding-top:5px;"/>
+        <p style="font-size:1em;font-weight:600;padding:0 20px 10px;color:#000;line-height:1.5;" class="arial">
+            Help us reach our goal of 3,000 coats to provide warmth for those in need in Northern Arizona this Season.
+        </p>
+        <div class="centered sponsors">
+            <p style="font-size:0.6em;font-weight:bold;color:#666;padding:3px;margin-top:10px;background-color:#eaeaea;">Brought To You By:</p>
+            <ul style="width:165px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://kaff.gcmaz.com" target="_blank"><img src="{{asset('images/sponsors/929kaff.jpg')}}" width="135" height="auto" /></a></li>
+                <li><a href="http://magic991.gcmaz.com" target="_blank"><img src="{{asset('images/sponsors/991magic.jpg')}}" width="120" height="auto" style="margin:25px auto 0;" /></a></li>
+            </ul>
+            <ul style="width:165px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://939themountain.gcmaz.com/" target="_blank"><img src="{{asset('images/sponsors/939mtn.jpg')}}" width="120" height="auto" /></a></li>
+                <li><a href="http://funoldies.gcmaz.com" target="_blank"><img src="{{asset('images/sponsors/1009oldies.jpg')}}" width="110" height="auto" /></a></li>
+            </ul>
+             <ul style="width:165px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                 <li><a href="http://country935.gcmaz.com" target="_blank"><img src="{{asset('images/sponsors/935flagcountry.jpg')}}" width="110" height="auto" /></a></li>
+            </ul>
+            <ul style="width:165px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+                <li><a href="http://hits106.gcmaz.com" target="_blank"><img src="{{asset('images/sponsors/106hits.jpg')}}" width="110" height="auto" /></a></li>
+            </ul>
+            <br class="clear" />  
+        </div>
+        <div class="fb-like" style="margin:0 auto 100px;display:block;visibility: visible !important;z-index: 1000 !important;" data-href="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash': 'gift-of-warmth-coat-drive'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+        <br class="clear"/>
+    </div>
+{% endblock %}
