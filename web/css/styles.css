@@ -61,6 +61,18 @@ body{
 .bodybg5{ background-image: url('../images/1650wide/bg5.jpg'); }
 .bodybg6{ background-image: url('../images/1650wide/bg6.jpg'); }
 .bodybg7{ background-image: url('../images/1650wide/bg7.jpg'); }*/
+.bgtile{
+            	background-image: url('../images/bg-mid-tile.jpg');
+	background-repeat:repeat-y;
+                overflow:auto;
+}
+.bghdr{
+    	background-image:url('../images/bg-top.jpg');
+	background-repeat:no-repeat;
+                overflow: auto;
+}
+.takeover{background-color:#000;background-image: url('../images/takeover/ex/bg.jpg');}
+.takeover-hdr{width:100%;height:75px;}
 
 h1{
     color:#c00;
@@ -106,16 +118,6 @@ img { height:auto; }
 	float:right;
                 overflow:hidden;
                 padding-bottom: 3px;
-}
-.bgtile{
-            	background-image: url('../images/bg-mid-tile.jpg');
-	background-repeat:repeat-y;
-                overflow:auto;
-}
-.bghdr{
-    	background-image:url('../images/bg-top.jpg');
-	background-repeat:no-repeat;
-                overflow: auto;
 }
 .clear{
 	clear:both;
