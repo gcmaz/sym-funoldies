@@ -15,6 +15,12 @@ class SplashController extends Controller
                     'splash' => $splash
                 ));
 
+            // BOOT DROP
+            case 'boot-drop-prescott-2014' :
+                return $this->render('FunOldiesMainBundle:Splash:bootdrop.html.twig', array(
+                    'splash' => $splash
+                )); 
+                
             // GIFT OF WARMTH
             case 'gift-of-warmth-coat-drive' :
                 return $this->render('FunOldiesMainBundle:Splash:giftofwarmth.html.twig', array(

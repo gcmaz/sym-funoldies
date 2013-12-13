@@ -1,0 +1,38 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    New Years Eve Boot Drop 2014 with Fun Oldies Radio - Prescott, AZ
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="New Years Eve Boot Drop 2014 with Fun Oldies Radio - Prescott, AZ"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />   
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/boot-drop-2014.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash':'boot-drop-2014'}) }}"/>
+    <meta property="og:title" content="New Years Eve Boot Drop 2014 with Fun Oldies Radio - Prescott, AZ"/> 
+    <meta property="og:description" content="New Years Eve Boot Drop 2014 with Fun Oldies Radio - Prescott, AZ"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="new years eve, boot drop, Prescott"/>
+{% endblock %}
+    
+{% block content %}
+    <div class="splash" style="background-color:#fff;padding:5px;">
+        <img src="{{ asset('images/660x250/boot-drop-2014.jpg') }}" width="660" height="250" alt="New Years Eve Boot Drop 2014 - Prescott, AZ" />
+        <p style="text-align:center;font-size:1em;color:#000;font-weight:500;line-height:1.2em;" class="arial">
+            It’s almost time to ring in 2014 and the only place to be this New Year’s Eve is on Whiskey Row!
+          <br/><br/>
+          <span style="color:#C00;font-size:1.5em;">The 3rd Annual Boot Drop!</span>
+          <br/><br/>
+          Thanks to the community's support, Prescott's original illuminated six foot cowboy boot will be lowered from a 70' Prescott Fire Engine Ladder at 10PM and midnight. It's been a great family friendly fun way to ring in the New Year and it's becoming a regular tradition for all those who attend. This year's planning is in the works to make the 2013/2014﻿ New Year's Eve Boot Drop event even bigger & better! This includes entertainment, amazing fireworks at midnight, local vendors and live video screens to count down the start of the New Year. Join us for the Third Annual New Year's Eve Boot Drop Event on Tuesday, December 31, 2013. 
+        </p>
+        <br/>
+        <a href="http://www.bootdrop.net/" target="_blank">Visit Official Website &raquo;</a>
+        <br style="clear:both;" /><br/>
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_splash', {'splash': 'boot-drop-prescott-2014'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+{% endblock %}
