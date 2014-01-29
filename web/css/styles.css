@@ -72,7 +72,7 @@ body{
                 overflow: auto;
 }
 .takeover{background-color:#000;background-image: url('../images/takeover/ex/bg.jpg');}
-.takeover-hdr{width:100%;height:75px;}
+.takeover-hdr{width:100%;height:250px;}
 
 h1{
     color:#c00;
@@ -198,7 +198,7 @@ strong { font-weight:700; }
     height:150px;
     display:block;
     overflow:hidden;
-    /*margin-top:-14px;*/
+    margin-top:5px;
 }
 .mainbox_box{
     /*background-image:url('../images/bg-main-box.png');*/
