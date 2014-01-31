@@ -38,22 +38,28 @@
 {% endblock %}
 
 {% block content %}
-    <div class="contest" style="background-color:#251810;">
-        <img src="{{asset('images/660x250/queen-of-caffeine.jpg')}}" width="660" height="250" alt="Win Free Coffee For Your Office - Queen of Caffeine" usemap="#propane" />
-        <p style="font-size:0.8em;font-weight:700;padding:0 20px 10px;color:#ccaa95;line-height:1.5;">
-            It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and sweets from Wild Iris Coffee House.
+    <div class="contest arial" style="background-color:#251810;">
+        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'queen-of-caffeine'}) }}" data-send="true" data-width="660" data-show-faces="true" data-font="arial" colorscheme="dark" style="margin:3px 2%;padding:0;"></div>
+        <img src="{{asset('images/splash/queen-of-caffeine.jpg')}}" width="660" height="270" alt="Win Free Coffee For Your Office - Queen of Caffeine" usemap="#propane" />
+        <p style="font-size:0.9em;font-weight:600;padding:0 20px 10px;color:#ccaa95;line-height:1.5;">
+            It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and danishes from Olde World Bagels and Market for up to eight people!
         </p>
-        <p style="float:left;width:220px;font-size:0.7em;color:#ccaa95;padding:25px 0 0 10px;">
-            <a href="http://wildiriscoffee.com/" target="_blank" style="display:block;">
-                <img src="{{asset('images/sponsors/wild-iris.png')}}" width="209" height="68" alt="Wild Iris Coffee House" border="0" />
+        <p style="float:left;width:220px;font-size:0.8em;color:#ccaa95;padding:10px 0 0 10px;">
+            <a href="https://www.facebook.com/OWBAZ" target="_blank" style="display:block;">
+                <img src="{{asset('images/sponsors/olde-world-bagels.jpg')}}" width="200" height="59" alt="Olde World Bagels and Market Prescott, AZ" border="0" />
             </a>
             <br/>
-            <span style="color:#fff;">124 South Granite St, Ste E<br/>Prescott, AZ<br/>928-778-5155</span>
+            <span style="color:#fff;">404 West Goodwin Street<br/>Prescott, AZ 86303<br/>928-771-0441</span>
             <br/>
-            We are about Coffee, Comfort, and Community.<br/>
-            <span style="font-weight:400;">Overlooking beautiful Granite Creek, the Wild Iris Coffeehouse is locally owned and operated in Downtown Prescott, Arizona since 2007 just one block off the Historic Prescott Square and its famous Whiskey Row. We are Prescott’s picturesque coffeehouse serving fantastic coffee, espresso and tea.
-            We offer amazing coffee and loose leaf tea, scrumptious made from scratch pastries, desserts, light lunch fare and more baked right on the premises! You can enjoy all of this inside our warm and cozy historic building or you outside in our secluded courtyard surrounded by mature trees and listen to the delightful sounds of Granite Creek.
+            <a href="https://www.facebook.com/OWBAZ" style="color:#ccaa95;">Our Facebook &raquo;</a>
+            <br/><br/>
+            Experience one lucid moment within the madness of your day! Visit our Espresso Bar!
             </span>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <span style="font-size:1.5em;">You can <span style="text-decoration:underline;">also</span> enter by calling Bo in the studio during his morning shift!</span>
+            <br/>
+            <span style="font-size:1.8em;color:#fff;">928-445-6883</span>
+            <br/>
         </p>
         {% for flashMessage in app.session.flashbag.get('caffeinenotice') %}
             <div class="notice">
@@ -93,10 +99,9 @@
             <input type="submit" value="Submit" />
         </form>
         <br class="clear"/>
-        <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'queen-of-caffeine'}) }}" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
     </div>
     <map name="propane" id="propane">
-        <area shape="rect" coords="0,189,132,250" href="http://www.barrettpropane.org" target="_blank" alt="Barrett Propane" />
-        <area shape="rect" coords="540,230,660,250" href="http://jebblann.com/wordpress/" target="_blank" alt="Jeb Blann Photography" />
+        <area shape="rect" coords="0,200,132,270" href="http://www.barrettpropane.org" target="_blank" alt="Barrett Propane" />
+        <area shape="rect" coords="540,240,660,270" href="http://jebblann.com/wordpress/" target="_blank" alt="Jeb Blann Photography" />
     </map>
 {% endblock %}
