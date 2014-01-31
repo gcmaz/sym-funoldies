@@ -45,12 +45,4 @@ $(document).ready(function(){
         });
     });
     
-    /* ----- track page tko clicks ------*/
-    var $tkobtn = $(document).find('#tkobtn');
-    $tkobtn.on('click', function(){
-        // ( (send command), (event hit type), category, action, label, (value) )  --- (label and value not req)
-        ga('send', 'event', 'button', 'click', 'takeover_old');
-        
-    });
-    
 });
