@@ -44,23 +44,18 @@
         <p style="font-size:0.9em;font-weight:600;padding:0 20px 10px;color:#ccaa95;line-height:1.5;">
             It’s time to reward your office with a coffee break! Fill out the form telling us why your office deserves a visit from the Queen of Caffeine. Every Thursday we’ll pick a winner and you’ll get FREE coffee and danishes from Olde World Bagels and Market for up to eight people!
         </p>
-        <p style="float:left;width:220px;font-size:0.8em;color:#ccaa95;padding:10px 0 0 10px;">
+        <div style="float:left;width:220px;font-size:0.8em;color:#ccaa95;padding:0 0 0 10px;">
             <a href="https://www.facebook.com/OWBAZ" target="_blank" style="display:block;">
                 <img src="{{asset('images/sponsors/olde-world-bagels.jpg')}}" width="200" height="59" alt="Olde World Bagels and Market Prescott, AZ" border="0" />
             </a>
-            <br/>
-            <span style="color:#fff;">404 West Goodwin Street<br/>Prescott, AZ 86303<br/>928-771-0441</span>
-            <br/>
-            <a href="https://www.facebook.com/OWBAZ" style="color:#ccaa95;">Our Facebook &raquo;</a>
-            <br/><br/>
-            Experience one lucid moment within the madness of your day! Visit our Espresso Bar!
-            </span>
-            <br/><br/><br/><br/><br/><br/><br/>
-            <span style="font-size:1.5em;">You can <span style="text-decoration:underline;">also</span> enter by calling Bo in the studio during his morning shift!</span>
-            <br/>
-            <span style="font-size:1.8em;color:#fff;">928-445-6883</span>
-            <br/>
-        </p>
+            <p style="color:#fff;">404 West Goodwin Street<br/>Prescott, AZ 86303<br/>928-771-0441</p>
+            <p>
+                <a href="https://www.facebook.com/OWBAZ" style="color:#ccaa95;">Our Facebook &raquo;</a>
+            </p>
+            <p style="line-height:1.5;text-align:left;">
+                Visit Olde World Bagels for a delicious cappuccino, latte or a cup of hot tea from their beverage bar! Their beautiful European style cafe has plenty of room to relax and enjoy the ambiance. Start your morning with a freshly made bagel or breakfast bagel sandwich, or take a break from work and enjoy one of their incredible lunch items, including sandwiches and salads.  They also have freshly made smoothies and yummy baked goods.  Everything is made local and made fresh daily! Olde World Bagels, a little slice of Europe right here in Prescott!
+            </p>
+        </div>
         {% for flashMessage in app.session.flashbag.get('caffeinenotice') %}
             <div class="notice">
                 {{ flashMessage }}
@@ -98,7 +93,11 @@
 
             <input type="submit" value="Submit" />
         </form>
-        <br class="clear"/>
+        <br class="clear"/><br/>
+        <p style="font-size:1em;" class="orange">
+            You can <span style="text-decoration:underline;">also</span> enter by calling Bo in the studio during his morning shift! <span style="color:#fff;">928-445-6883</span>
+        </p>
+        <br/><br/>
     </div>
     <map name="propane" id="propane">
         <area shape="rect" coords="0,200,132,270" href="http://www.barrettpropane.org" target="_blank" alt="Barrett Propane" />
