@@ -26,6 +26,12 @@ class ContactType extends AbstractType
             'empty_data' => null
         ));
         $builder->add('comments', 'textarea');
+        $builder->add('captcha', 'captcha', array(
+            'background_color' => array(9,15,31),
+            'reload' => true,
+            'max_front_lines' => 1,
+            'max_behind_lines' => 1,
+        ));
     }
 
     public function getName()

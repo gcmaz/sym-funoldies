@@ -4,3 +4,6 @@ parameters:
   fo.emails.caffeine_email: [alexa@magic991.com, loree@magic991.com]
   fo.emails.gencontest_email: [webmaster@funoldiesnow.com, alexa@magic991.com, bo@funoldiesnow.com]
   fo.emails.webmaster_email: webmaster@funoldiesnow.com
+  
+gregwar_captcha:
+    as_url: true

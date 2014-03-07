@@ -25,8 +25,25 @@
         form.contactform textarea { width: 400px; height: 150px; line-height: 26px; font-size: 20px; }
         form.contactform input[type="submit"] { margin-left: 160px; width: 408px; line-height: 26px; font-size: 20px; min-height: 26px; }
         form.contactform ul li { color: #c00; margin-bottom: 5px; }
+        #contact_captcha { width:30%;display:inline;vertical-align: top; margin-left:10px;color:#6a7ba7;font-size:0.7em;}
+        a.captcha_reload { color:#6a7ba7;font-size:0.6em;font-weight:600;margin:10px 5px 0;vertical-align: top;display:inline-block;}
     </style>
 {% endblock %}
+    
+{% block js_top %}
+    {{ parent() }}
+    <script type=text/javascript>
+        $(document).ready(function(){
+            // change captcha def text
+            $('#contact_captcha').val('Enter Captcha Here');
+            $('#contact_captcha').focus(function(){
+                if($(this).val()=='Enter Captcha Here'){
+                    $(this).val('');
+                }
+            });
+        });
+    </script>
+ {% endblock %}
     
 {% block content %}
     <div style="width:290px;float:left;margin:10px 10px 20px 20px;padding:5px 0;color:#173739;line-height:1.4;font-weight:600;background-color: rgba(19,160,229,.1);border:1px solid #fff;" class="textshadow">
