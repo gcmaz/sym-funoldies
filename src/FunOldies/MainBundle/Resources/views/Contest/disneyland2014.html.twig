@@ -1,0 +1,56 @@
+{% extends 'FunOldiesMainBundle::layout.html.twig' %}
+
+{% block title %}
+    Win a trip to Disneyland!  Radio Contest on Fun Oldies 100.9 / 1450am
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Win a trip to Disneyland and many other daily prizes!  Northern Arizona Radio Contest on Fun Oldies 100.9 / 1450am"/>
+    <meta property="og:site_name" content="http://funoldies.gcmaz.com" />
+    <meta property="fb:admins" content="100003228578475" />
+    <meta property="fb:app_id" content="479469978793919" />
+    <meta property="og:type" content="music.radio_station" />
+    <meta property="og:image" content="http://funoldies.gcmaz.com{{ asset('images/660x250/disneyland-2014-generic.jpg') }}"/>
+    <meta property="og:url" content="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest': 'win-a-trip-to-disneyland'}) }}"/>
+    <meta property="og:title" content="Win a trip to Disneyland!  Radio Contest on Fun Oldies 100.9 / 1450am"/> 
+    <meta property="og:description" content="Win a trip to Disneyland and many other daily prizes!  Northern Arizona Radio Contest on Fun Oldies 100.9 / 1450am"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="radio, contest, win a trip to disneyland"/>
+{% endblock %}
+
+{% block content %}
+<div class="arial centered contest">
+    <div class="fb-like" data-href="http://funoldies.gcmaz.com{{ path('fo_contest', {'contest':'win-a-trip-to-disneyland'}) }}" data-send="true" data-width="660" data-show-faces="false" data-font="arial" style="margin:0 auto;padding:3px;"></div>
+    <img src="{{ asset('images/660x250/disneyland-2014-generic.jpg') }}" width="660" height="250" alt="Win a trip to Disneyland" usemap="#ccc" style="border:1px solid white;"/>
+    <p style="text-align: center;"><span style="font-size: 18pt;"><strong>Contest begins Monday April 14th!</strong></span></p>
+    <p style="font-weight:600;font-size:1.2em;width:90%;">
+        Go to these locations and register for your chance to win the Ultimate Disneyland Vacation!
+    </p>
+    <div style="width:90%;height:100px;border:1px solid #ccc;margin:auto;">
+        <p style="color:#999">(Locations To Be Announced)</p>
+    </div>
+    <div class="clear centered sponsors">
+        <p style="font-size:0.8em;font-weight:bold;color:#666;padding:3px;margin-top:10px;background-color:#eaeaea;">Brought to you by:</p>
+        <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+            <li><a href="https://www.facebook.com/CliffCastleCasino" target="_blank"><img src="{{asset('images/sponsors/cliff-castle-casino-hotel.jpg')}}" width="150" height="auto" /></a></li>
+            <li><a href="http://www.highlandsfloorcoverings.com/" target="_blank"><img class="alignnone wp-image-222 size-full" src="{{asset('images/sponsors/highlands-floor-coverings.jpg')}}" alt="highlands floor coverings" width="179" height="74" style="padding:5px 10px;" /></a></li>
+        </ul>
+        <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+            <li><a href="http://northazortho.com/urgent%20" target="_blank"><img class="alignnone wp-image-224 size-full" src="{{asset('images/sponsors/no-az-ortho.jpg')}}" alt="Northern Arizona Orthopaedics" width="144" height="63" style="padding:5px 10px;"/></a></li>
+            <li><a href="http://flagstaffnissansubaru.com" target="_blank"><img class="alignnone wp-image-221 size-full" src="{{asset('images/sponsors/flagstaff-nissan-subaru.jpg')}}" alt="flagstaff nissan subaru" width="135" height="66" style="padding:5px 10px;" /></a></li>
+        </ul>
+         <ul style="width:200px;list-style-type:none;margin:0 auto;padding:0;display:inline-block;vertical-align: top;">
+            <li><a href="http://www.myhomco.com/" target="_blank"><img class="alignnone wp-image-223 size-full" src="{{asset('images/sponsors/homco-lumber.jpg')}}" alt="HomCo Lumber" width="180" height="50"  style="padding:5px 10px;"/></a></li>
+            <li><a href="http://www.bigotires.com/Location/AZ/Flagstaff/86004" target="_blank"><img class="alignnone wp-image-220 size-full" src="{{asset('images/sponsors/big-o-tires.jpg')}}" alt="big o tires" width="200" height="34" style="padding:5px 10px;" /></a></li>
+        </ul>
+        <br class="clear" />
+    </div>
+    <p><a href="#" target="_blank" style="text-decoration:none;color:#666;font-size:10px;">Official Rules</a></p>
+    <br/>
+</div>
+<map id="ccc" name="ccc">
+    <area shape="rect" coords="308,158,446,250" target="_blank" href="http://www.cliffcastlecasinohotel.com/" />
+</map>
+{% endblock %}

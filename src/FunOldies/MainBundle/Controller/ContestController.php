@@ -18,7 +18,13 @@ class ContestController extends Controller
             // **** DEFAULT ****
             case 'default' :
                 // could display list of contests here
-                return $this->render('Magic991MainBundle:Page:contest.html.twig', array(
+                return $this->render('FunOldiesMainBundle:Page:contest.html.twig', array(
+                    'contest' => $contest
+                ));
+                
+            // DISNEYLAND
+            case 'win-a-trip-to-disneyland' :  
+                return $this->render('FunOldiesMainBundle:Contest:disneyland2014.html.twig', array(
                     'contest' => $contest
                 ));
 
