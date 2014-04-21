@@ -547,6 +547,7 @@ div.dbl-row p:first-child + p{
     background-color:#e1f0e8;
     overflow:auto;
 }
+ul.job-info li{list-style-type:disc;margin-left:20px;}
 .photo-gals a{
     color:#21656d;
 }
