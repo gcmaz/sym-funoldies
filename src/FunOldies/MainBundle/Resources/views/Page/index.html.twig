@@ -5,11 +5,11 @@
     <link type="text/css" rel="stylesheet" href="{{asset('scripts/nivo-slider/nivo-slider.css')}}"/>
 {% endblock %}
     
-{% block leftcol_priority_banner %}
+{# block leftcol_priority_banner %}
     <a href="http://www.gcmaz.com/contest/nom-a-mom">
         <img src="{{asset('images/300x250/nom-a-mom.jpg')}}" width="300" height="250" alt="Nominate a Super Mom to win prizes in the Nom-a-Mom contest" style="margin-top:10px"/>
     </a>
-{% endblock %}
+{% endblock #}
     
 {% block content %}
     <div class="mainbox_box">
@@ -45,16 +45,11 @@
                 <img src="{{ asset('images/320x150/queen-of-caffeine.jpg') }}" width="320" height="150" alt="Queen of Caffeine"/>
             </a>
         </div>
-        {#<a href="{{ path('fo_pet')}}">
+        <a href="{{ path('fo_pet')}}">
             <div class="box_320x150 box_right dropshadow pet-banner">
                 <img {% for entity in entities %} src="{% path entity.picture, 'small' %}" width="150" height="150" alt="{{ entity.name }}" border="0" align="right" {% endfor %}/>
             </div>
-        </a>#}
-        <div class="box_320x150 box_right dropshadow">
-            <a href="http://www.gcmaz.com/info/teachers-appreciation-night" target="_blank">
-                <img src="{{asset('images/320x150/teachers-appreciation-night.jpg')}}" width="320" height="150" alt="Teachers Appreciation Night"/>
-            </a>
-        </div>
+        </a>
         </div>
         <br class="clear"/>
     </div>
